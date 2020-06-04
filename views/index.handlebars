@@ -1,0 +1,41 @@
+<ul>
+  {{#each kids}}
+  <li>
+    <p>
+      {{this.id}}. {{this.kid}}
+      {{!-- <button data-kidid="{{this.id}}" class="editkid">Edit Child</button> --}}
+      <button data-kidid="{{this.id}}" class="delkid">Remove Child</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each guardians}}
+  <li>
+    <p>
+      {{this.id}}. {{this.guardian}}
+      {{!-- <button data-guardianid="{{this.id}}" class="editguardian">Edit Guardian</button> --}}
+      <button data-guardianid="{{this.id}}" class="delguardian">Delete Guardian!</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+<script type="text/javascript">
+  $(".delkid").on("click", function(event) {
+    // Get the ID from the button.
+    // This is shorthand for $(this).attr("data-kidid")
+    var id = $(this).data("kidid");
+
+    // Send the DELETE request.
+    $.ajax("/api/kids/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("removed kid ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
