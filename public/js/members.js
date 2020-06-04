@@ -1,11 +1,11 @@
 function addKidStart() {
     const newkid = {
-        name: $("").val().trim(),
-        guardian: $("").val().trim(),
+        name: $("kidNameText").val().trim(),
+        guardian: $("guardianNameText").val().trim(),
         sibling: $("").val().trim(),
         pet: $("").val().trim(),
       };
-    $.ajax("/api/cats", {
+    $.ajax("/api/kids", {
         type: "POST",
         data: newKid
     }).then(
