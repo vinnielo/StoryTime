@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+    <title>StoryTime with You!</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://image.shutterstock.com/image-vector/group-happy-kids-cartoon-260nw-508918468.jpg"
+                            class="d-block w-100 h-100" alt="kids playing">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://firstfriendsdaycaresocietydotcom.files.wordpress.com/2015/11/bigstock-kids-cartoon-201684081.jpg"
+                            class="d-block w-100 h-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://previews.123rf.com/images/yummybuum/yummybuum1903/yummybuum190300037/124790481-jumping-kids-cartoon-children-playing-and-jump-isolated-happy-active-cute-surprised-kid-vector-chara.jpg"
+                            class="d-block w-100 h-100" alt="...">
+                    </div>
+                </div>
+            </div>
+            <h1 class="display-4 text-center">Make a story</h1>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <button type="button" id="addKidBtn" class="btn btn-primary" data-toggle="modal" data-target="#addKidModal">
+                        Add a Kid
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" id="createStoryBtn" class="btn btn-primary" data-toggle="modal" data-target="#createStoryModal">
+                        Create a Story
+                    </button>
+                </li> -->
+                <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> --> -->
+            </ul>
+
+
+            <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+        </div>
+    </div>
+
+
+    <div class="card-footer text-muted text-center">
+        &copy; StoryTime
+    </div>
+
+    <!--Add Child Button trigger modal  -->
+    <!-- Modal -->
+    <div class="modal fade" id="addKidModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a Kid</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    >---This is where the input fields will be placed--->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="saveKid" class="btn btn-primary">Save Kid</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!--Create Story Button trigger modal  -->
+    <!-- Modal -->
+    <div class="modal fade" id="createStoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create A Story</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    >---This is where the input fields will be placed--->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Create Story</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="./public/js/members.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
