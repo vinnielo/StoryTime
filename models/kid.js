@@ -5,8 +5,7 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.STRING,
           allowNull: false
           
-        },
-      
+        },      
         pet: {
           type: DataTypes.STRING,
           allowNull: true
@@ -14,8 +13,30 @@ module.exports = function(sequelize, DataTypes) {
         sibling: {
             type: DataTypes.STRING,
             allowNull: true
-          }
+          }, 
+        guardian: {
+          type: DataTypes.STRING,
+            allowNull: true
+        },
+        guardian1: {
+          type: DataTypes.STRING,
+            allowNull: true
+        },
+        toy: {
+          type: DataTypes.STRING,
+            allowNull: true
+        }
+
+
       });
+
+      Kid.associate = function(models){
+        Kid.belongsTo(models.User, {
+          foreignKey: {
+            allowNull:false
+          }
+        })
+      }
  return Kid
 
 };
