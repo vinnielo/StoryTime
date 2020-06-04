@@ -33,13 +33,105 @@
         <h1>StoryTime Adventure!</h1>
       </div>
       <div class="title-text1">
-        <button type="button" class="btn btn-info logIn">Log In</button>
+        <button type="button" id="loginBtn" class="btn btn-info logIn" data-toggle="modal" data-target="#loginModal">Log In</button>
         <button type="button" class="btn btn-info signUp">Sign Up</button>
       </div>
 
       <div class="card-footer text-muted text-center">
         &copy; StoryTime
       </div>
+
+      <!-- modal for login -->
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log In:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-row">
+                      <!-- login form -->
+                        <div class="col-md-6 mb-3">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="kidName" placeholder="Enter your email address" required>
+                            <div class="valid-feedback"> Done! </div>
+                            <div class="invalid-feedback"> need a valid email! </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="userPassword">Password:</label>
+                            <input type="text" class="form-control" id="userPassword"
+                                placeholder="Password" required>
+                            <div class="valid-feedback"> Done! </div>
+                            <div class="invalid-feedback"> You Must Add a Password! </div>
+                        </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Create Story</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- modal for sign up -->
+    <div class="modal fade" id="createUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign-Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-row">
+                      <!-- login form -->
+                        <div class="col-md-6 mb-3">
+                            <label for="UserCreateEmail">Email</label>
+                            <input type="text" class="form-control" id="UserCreateEmail" placeholder="Enter your email address" required>
+                            <div class="valid-feedback"> Done! </div>
+                            <div class="invalid-feedback"> need a valid email! </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="userCreatePassword">Password:</label>
+                            <input type="text" class="form-control" id="userCreatePassword"
+                                placeholder="Password" required>
+                            <div class="valid-feedback"> Done! </div>
+                            <div class="invalid-feedback"> You Must Add a Password! </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="userFirstName">First Name:</label>
+                            <input type="text" class="form-control" id="userFirstName" placeholder="First Name" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                          <label for="userLastName">Last Name:</label>
+                          <input type="text" class="form-control" id="userLastName" placeholder="First Name" required>
+                          <div class="valid-feedback"></div>
+                          <div class="invalid-feedback"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>                
+                </div>
+            </div>
+        </div>
+    </div>
 
         
 
