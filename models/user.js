@@ -16,8 +16,18 @@ module.exports = function(sequelize, DataTypes) {
         password: {
           type: DataTypes.STRING,
           allowNull: false
+        },
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false
         }
       });
+
+      User.associate = function(models){
+        User.hasMany(models.Kid, {
+          onDelete: "cascade"
+        });
+      };
  
       // User.prototype.validPassword = function(password) {
       //   return bcrypt.compareSync(password, this.password);
