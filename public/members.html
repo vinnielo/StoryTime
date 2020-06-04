@@ -80,14 +80,14 @@
                     <form>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <label for="kidName">Child's Name</label>
-                                <input type="text" class="form-control" id="kidName" placeholder="Childs Name" required>
+                                <label for="kidName">Child's Name *</label>
+                                <input type="text" class="form-control required" id="kidName" placeholder="Childs Name" required>
                                 <div class="valid-feedback"> Nice Name! </div>
                                 <div class="invalid-feedback"> Tell me your name! </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="guardFriendName">Guardian/Friend's Name</label>
-                                <input type="text" class="form-control" id="guardFriendName"
+                                <label for="guardFriendName">Guardian/Friend's Name *</label>
+                                <input type="text" class="form-control required" id="guardFriendName"
                                     placeholder="Guardian or Friend's Name" required>
                                 <div class="valid-feedback"> Sweet! </div>
                                 <div class="invalid-feedback"> You must have someone to add! </div>
@@ -113,11 +113,13 @@
                                 <label for="favoriteToy">Favorite Toy</label>
                                 <input type="text" class="form-control" id="favoriteToy" placeholder="Toy's Name" required>
                                 <div class="valid-feedback"> I want one of those! </div>
+                                <div class="invalid-feedback"> I know you have plenty to pick from! </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="petName">Pet Name</label>
                                 <input type="text" class="form-control" id="petName" placeholder="Pet's Name" required>
                                 <div class="valid-feedback"> Woof Woof! Meow Meow! </div>
+                                <div class="invalid-feedback"> YOU HAVN'T NAMED YOUR PET?! </div>
                             </div>
                         </div>
                     </form>
