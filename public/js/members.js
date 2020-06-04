@@ -5,7 +5,7 @@ function addKidStart() {
         sibling: $("").val().trim(),
         pet: $("").val().trim(),
       };
-    $.ajax("/api/cats", {
+    $.ajax("/api/kids", {
         type: "POST",
         data: newKid
     }).then(
