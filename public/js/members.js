@@ -6,10 +6,10 @@ $(document).ready(function() {
 
     function addKidStart() {
         const newKid = {
-            name: $("kidNameText").val().trim(),
-            guardian: $("guardianNameText").val().trim(),
-            sibling: $("").val().trim(),
-            pet: $("").val().trim(),
+            name: $(".kidNameText").val().trim(),
+            guardian: $(".guardianNameText").val().trim(),
+            // sibling: $("").val().trim(),
+            // pet: $("").val().trim(),
         };
         $.ajax("/api/kids", {
             type: "POST",
@@ -23,12 +23,6 @@ $(document).ready(function() {
         );
     }
 
-    $("#saveKid").on("click", function (event) {
-        event.preventDefault();
-        addKidStart();
-    });
-
-
 
     // Function for creating a new list row for authors
     function createKidRow(kidData) {
@@ -38,6 +32,28 @@ $(document).ready(function() {
         return newTr;
     }
 
+$("#saveKid").on("click", function (event) {
+    event.preventDefault();
+   if ($(".kidNameText").val()){
+    $(".kidNameText").addClass("is-valid");
+    $(".kidNameText").removeClass("is-invalid")
+   }else{
+    $(".kidNameText").removeClass("is-valid");
+    $(".kidNameText").addClass("is-invalid");
+   }
+   if ($(".guardianNameText").val()){
+    $(".guardianNameText").addClass("is-valid");
+    $(".guardianNameText").removeClass("is-invalid")
+   }else{
+    $(".guardianNameText").removeClass("is-valid");
+    $(".guardianNameText").addClass("is-invalid");
+   }
+   if ($(".kidNameText").val()===true && $(".guardianNameText").val()==true){
+       addKidStart();
+   }else{
+       alert("Please fill out all required fields")
+   }
+});
     // Function for retrieving authors and getting them ready to be rendered to the page
     function getKids() {
         $.get("/api/kids", function(data) {
