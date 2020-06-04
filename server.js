@@ -17,7 +17,6 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./routes/guardian-api-routes.js")(app);
 require("./routes/kid-api-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
