@@ -32,15 +32,19 @@
                     </div>
                 </div>
             </div>
-            <h1 class="display-4 text-center">Make a story</h1>
+            <h1 class="display-4 text-center">Create a Story</h1>
             <ul class="nav justify-content-center">
+                <!-- Add Kid Modal -->
                 <li class="nav-item">
-                    <button type="button" id="addKidBtn" class="btn btn-primary" data-toggle="modal" data-target="#addKidModal">
-                        Add a Kid
+                    <button type="button" id="addKidBtn" class="btn btn-primary" data-toggle="modal"
+                        data-target="#addKidModal">
+                        Add a Child
                     </button>
                 </li>
+                <!-- Create Story -->
                 <li class="nav-item">
-                    <button type="button" id="createStoryBtn" class="btn btn-primary" data-toggle="modal" data-target="#createStoryModal">
+                    <button type="button" id="createStoryBtn" class="btn btn-primary" data-toggle="modal"
+                        data-target="#createStoryModal">
                         Create a Story
                     </button>
                 </li> -->
@@ -60,20 +64,65 @@
     </div>
 
     <!--Add Child Button trigger modal  -->
-    <!-- Modal -->
+    <!-- Add Child Modal -->
     <div class="modal fade" id="addKidModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add a Kid</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add a Child</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    >---This is where the input fields will be placed--->
+                    <!-- Add kid's information form -->
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="kidName">Child's Name</label>
+                                <input type="text" class="form-control" id="kidName" placeholder="Childs Name" required>
+                                <div class="valid-feedback"> Nice Name! </div>
+                                <div class="invalid-feedback"> Tell me your name! </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="guardFriendName">Guardian/Friend's Name</label>
+                                <input type="text" class="form-control" id="guardFriendName"
+                                    placeholder="Guardian or Friend's Name" required>
+                                <div class="valid-feedback"> Sweet! </div>
+                                <div class="invalid-feedback"> You must have someone to add! </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="guardFriendName2">Guardian/Friend's Name</label>
+                                <input type="text" class="form-control" id="guardFriendName2" placeholder="Guardian or Friend's Name" required>
+                                <div class="valid-feedback"> Awsome! </div>
+                                <div class="invalid-feedback"> You can pick anyone! </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="favSibling">Favorite Sibling</label>
+                                <input type="text" class="form-control" id="favSibling" placeholder="Sibling's Name" required>
+                                <div class="valid-feedback"> The other ones arn't bad either! </div>
+                                <div class="invalid-feedback"> Come on just pick a favorite, I wont tell! </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="favoriteToy">Favorite Toy</label>
+                                <input type="text" class="form-control" id="favoriteToy" placeholder="Toy's Name" required>
+                                <div class="valid-feedback"> I want one of those! </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="petName">Pet Name</label>
+                                <input type="text" class="form-control" id="petName" placeholder="Pet's Name" required>
+                                <div class="valid-feedback"> Woof Woof! Meow Meow! </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+                <!-- Modal Buttons Save & Close-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" id="saveKid" class="btn btn-primary">Save Kid</button>
@@ -81,7 +130,7 @@
             </div>
         </div>
     </div>
-      <!--Create Story Button trigger modal  -->
+    <!--Create Story Button trigger modal  -->
     <!-- Modal -->
     <div class="modal fade" id="createStoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -104,7 +153,7 @@
         </div>
     </div>
     <!-- Optional JavaScript -->
-    <script src="./public/js/members.js"></script>
+    <script src="./js/members.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
