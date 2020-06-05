@@ -36,20 +36,49 @@ $("#saveKid").on("click", function (event) {
     event.preventDefault();
    if ($(".kidNameText").val()){
     $(".kidNameText").addClass("is-valid");
-    $(".kidNameText").removeClass("is-invalid")
+    $(".kidNameText").removeClass("is-invalid");
    }else{
     $(".kidNameText").removeClass("is-valid");
     $(".kidNameText").addClass("is-invalid");
    }
    if ($(".guardianNameText").val()){
     $(".guardianNameText").addClass("is-valid");
-    $(".guardianNameText").removeClass("is-invalid")
+    $(".guardianNameText").removeClass("is-invalid");
    }else{
     $(".guardianNameText").removeClass("is-valid");
     $(".guardianNameText").addClass("is-invalid");
    }
    if ($(".kidNameText").val()===true && $(".guardianNameText").val()==true){
        addKidStart();
+   }else{
+       alert("Please fill out all required fields")
+   }
+});
+$("#storyCreateBtn").on("click", function (event) {
+    event.preventDefault();
+   if ($(".selectChildDD" ).val() !== "Choose..."){
+    $(".selectChildDD").addClass("is-valid");
+    $(".selectChildDD").removeClass("is-invalid");
+   }else{
+    $(".selectChildDD").removeClass("is-valid");
+    $(".selectChildDD").addClass("is-invalid");
+   }
+   if ($(".ageRangeDD").val() !== "Choose..."){
+    $(".ageRangeDD").addClass("is-valid");
+    $(".ageRangeDD").removeClass("is-invalid");
+   }else{
+    $(".ageRangeDD").removeClass("is-valid");
+    $(".ageRangeDD").addClass("is-invalid");
+   }
+   if ($(".storyTitleDD").val() !== "Choose..."){
+    $(".storyTitleDD").addClass("is-valid");
+    $(".storyTitleDD").removeClass("is-invalid");
+   }else{
+    $(".storyTitleDD").removeClass("is-valid");
+    $(".storyTitleDD").addClass("is-invalid");
+   }
+   if ($(".selectChildDD").val() !== "Choose..." && $(".ageRangeDD").val() !== "Choose..." && $(".storyTitleDD").val() !== "Choose..."){
+    //   This will trigger the generate story functionality
    }else{
        alert("Please fill out all required fields")
    }
