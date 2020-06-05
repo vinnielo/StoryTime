@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    returnUserData();
     var kidList = $("tbody");
     var kidContainer = $(".kid-container");
 
@@ -86,3 +87,9 @@ $("#saveKid").on("click", function (event) {
       .then(getKids);
   }
 })
+
+function returnUserData(){
+    $.get("/api/user_data").then(function(data) {
+   return data;
+    });
+  }
