@@ -3,10 +3,6 @@ INSERT INTO kids (name, pet, createdAt, updatedAt) VALUES ('Holden', 'Ziggy', '0
 INSERT INTO kids (name,  createdAt, updatedAt) VALUES ('Hunter',  '00:00:00', '00:00:00' );
 INSERT INTO kids (name, pet, createdAt, updatedAt, sibling) VALUES ('Tommy', 'Misty', '00:00:00', '00:00:00', 'Ben' );
 
--- GUARDIAN SEEDS
-
-INSERT INTO guardians (name, createdAt, updatedAt) VALUES ('Cyrus', '00:00:00', '00:00:00');
-INSERT INTO guardians (name, createdAt, updatedAt) VALUES ('Erik', '00:00:00', '00:00:00');
 
 -- USER SEEDS
 

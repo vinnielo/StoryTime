@@ -55,6 +55,7 @@ $("#saveKid").on("click", function (event) {
        alert("Please fill out all required fields")
    }
 });
+
 $("#storyCreateBtn").on("click", function (event) {
     event.preventDefault();
    if ($(".selectChildDD" ).val() !== "Choose..."){
@@ -80,6 +81,8 @@ $("#storyCreateBtn").on("click", function (event) {
    }
    if ($(".selectChildDD").val() !== "Choose..." && $(".ageRangeDD").val() !== "Choose..." && $(".storyTitleDD").val() !== "Choose..."){
     //   This will trigger the generate story functionality
+      
+
    }else{
        alert("Please fill out all required fields")
    }
