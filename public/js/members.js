@@ -49,6 +49,21 @@ $("#saveKid").on("click", function (event) {
     $(".guardianNameText").removeClass("is-valid");
     $(".guardianNameText").addClass("is-invalid");
    }
+   if ($(".guardianNameText2").val()){
+    $(".guardianNameText2").addClass("is-valid");
+    $(".guardianNameText2").removeClass("is-invalid");
+   }else{
+    $(".guardianNameText2").removeClass("is-valid");
+    $(".guardianNameText2").addClass("is-invalid");
+   }
+   if ($(".favSiblingText").val()){
+    $(".favSiblingText").addClass("is-valid");
+    $(".favSiblingText").removeClass("is-invalid");
+   }else{
+    $(".favSiblingText").removeClass("is-valid");
+    $(".favSiblingText").addClass("is-invalid");
+   }
+   //If required fields are entered addKidStart else alert
    if ($(".kidNameText").val()===true && $(".guardianNameText").val()==true){
        addKidStart();
    }else{
