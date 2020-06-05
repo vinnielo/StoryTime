@@ -86,10 +86,10 @@ $("#saveKid").on("click", function (event) {
     })
       .then(getKids);
   }
+  
+  function returnUserData(){
+      $.get("/api/user_data").then(function(data) {
+     return data;
+      });
+    }
 })
-
-function returnUserData(){
-    $.get("/api/user_data").then(function(data) {
-   return data;
-    });
-  }

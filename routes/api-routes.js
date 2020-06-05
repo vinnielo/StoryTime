@@ -46,4 +46,16 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/api/user_data/:id", function(req, res) {
+    // 2; Add a join to include all of the Author's Posts here
+    db.User.findOne({
+      where: {
+        id: req.params.id,
+        include: [db.Kid]
+      }
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
 };
