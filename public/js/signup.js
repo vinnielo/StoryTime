@@ -13,7 +13,8 @@ $(document).ready(function() {
       var userData = {
         email: emailInput.val().trim(),
         password: passwordInput.val().trim(),
-        name: firstNameInput.val().trim() + ' ' +lastNameInput.val().trim()
+        firstName: firstNameInput.val().trim(), 
+        lastName: lastNameInput.val().trim()
       };
       console.log(userData)
       // if (!userData.email || !userData.password || !userData.firstName || !userData.lastName) {
