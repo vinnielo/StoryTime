@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // Getting references to our form and inputs
-    var loginForm = $("form.login");
-    var emailInput = $("input#email-input");
-    var passwordInput = $("input#password-input");
+    var loginForm = $(".loginBtn");
+    var emailInput = $("#emailLogin");
+    var passwordInput = $("#userPassword");
   
     // When the form is submitted, we validate there's an email and password entered
     loginForm.on("submit", function(event) {
@@ -22,9 +22,9 @@ $(document).ready(function() {
       passwordInput.val("");
     });
   
-    // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+    // loginUser does a post to our "api/user_data" route and if successful, redirects us the the members page
     function loginUser(email, password) {
-      $.post("/api/login", {
+      $.post("/api/signup", {
         email: email,
         password: password
       })

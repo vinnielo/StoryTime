@@ -27,11 +27,11 @@ module.exports = function(sequelize, DataTypes) {
         }
       });
 
-      User.associate = function(models){
-        User.hasMany(models.Kid, {
-          onDelete: "cascade"
-        });
-      };
+      // User.associate = function(models){
+      //   User.hasMany(models.Kid, {
+      //     onDelete: "cascade"
+      //   });
+      // };
  
       User.prototype.validPassword = function(password) {
         return bcrypt.compareSync(password, this.password);
