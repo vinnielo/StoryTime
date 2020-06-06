@@ -1,5 +1,5 @@
 var express = require("express");
-
+const passport = require('passport')
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -14,7 +14,8 @@ app.use(express.json());
 
 // Static directory
 app.use(express.static("public"));
-
+app.use(passport.initialize())
+app.use(passport.session())
 // Routes
 // =============================================================
 require("./routes/kid-api-routes.js")(app);

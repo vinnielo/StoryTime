@@ -34,9 +34,10 @@ module.exports = function(app) {
 
   // POST route 
   app.post("/api/users", function(req, res) {
-    // db.User.create(req.body).then(function(dbUser) {
-    //   res.json(dbUser);
-    // });
+    console.log(req.body)
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
+    });
   });
 
   // DELETE route 
