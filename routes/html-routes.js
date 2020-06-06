@@ -6,20 +6,31 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 
+  // splash page route
   app.get("/", function(req, res) {
-    // If the user already has an account send them to the members page
+    
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+  
+  // once the user logs in send them to the members page
+
+  app.get("/members", function(req, res) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
+  // once user clicks on the generate story button redirect to story.html
+
+  app.get("/story", function(req, res) {   
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/story.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
