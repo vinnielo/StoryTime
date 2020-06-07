@@ -50,11 +50,11 @@ $(document).ready(function () {
         firstName: firstNameInput.val().trim(),
         lastName: lastNameInput.val().trim(),
       };
+      signUpUser(userData);
       emailInput.val("");
       passwordInput.val("");
       firstNameInput.val("");
       lastNameInput.val("");
-      signUpUser(userData);
     } else {
       console.log("else working!")
       alert("Enter all required fields")
@@ -74,8 +74,9 @@ $(document).ready(function () {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
+    // $("#alert .msg").text(err.responseJSON);
+    // $("#alert").fadeIn(500);
+    alert("Email already exists")
   }
 
 
