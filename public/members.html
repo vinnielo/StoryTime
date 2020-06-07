@@ -1,212 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
     <title>StoryTime with You!</title>
-</head>
+  </head>
 
-<body>
-    <div class="jumbotron jumbotron-fluid">
+  <body>
+    <header>
+      <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://image.shutterstock.com/image-vector/group-happy-kids-cartoon-260nw-508918468.jpg"
-                            class="d-block w-100 h-100" alt="kids playing">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://firstfriendsdaycaresocietydotcom.files.wordpress.com/2015/11/bigstock-kids-cartoon-201684081.jpg"
-                            class="d-block w-100 h-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://previews.123rf.com/images/yummybuum/yummybuum1903/yummybuum190300037/124790481-jumping-kids-cartoon-children-playing-and-jump-isolated-happy-active-cute-surprised-kid-vector-chara.jpg"
-                            class="d-block w-100 h-100" alt="...">
-                    </div>
-                </div>
-            </div>
-            <h1 class="display-4 text-center">Create a Story</h1>
-            <ul class="nav justify-content-center">
-                <!-- Add Kid Modal -->
-                <li class="nav-item">
-                    <button type="button" id="addKidBtn" class="btn btn-primary" data-toggle="modal"
-                        data-target="#addKidModal">
-                        Add a Child
-                    </button>
-                </li>
-                <!-- Create Story -->
-                <li class="nav-item">
-                    <button type="button" id="createStoryBtn" class="btn btn-primary" data-toggle="modal"
-                        data-target="#createStoryModal">
-                        Create a Story
-                    </button>
-                </li> -->
-                <!-- <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> --> -->
-            </ul>
-
-
-            <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+          <h1 class="display-4">StoryTime!</h1>
         </div>
+      </div>
+      <ul class="nav justify-content-end">
+        <!-- Add Kid Modal -->
+        <li class="nav-item">
+          <a
+            id="addKidBtn"
+            class="nav-link active"
+            data-toggle="modal"
+            data-target="#addKidModal"
+            href="#"
+            >Add a Child</a
+          >
+        </li>
+
+        <!-- Create Story -->
+        <li class="nav-item">
+          <a
+            id="createStoryBtn"
+            class="nav-link active"
+            data-toggle="modal"
+            data-target="#createStoryModal"
+            href="#"
+            >Create a Story</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">LogOut</a>
+        </li>
+      </ul>
+    </header>
+    <!-- side table of story contents -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="container" style="background-image: url('./images/old-scroll-realistic-vector-2798540.jpg'); background-size: 250px 310px;  background-repeat: no-repeat;"><br><br>
+            <h5>Story descriptions</h5><br>
+            <ul class="nav flex-column">
+              <!-- Add Kid Modal -->
+              <li class="nav-item">
+                <button
+                  type="button"
+                  id="age0to3"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#age0to3Modal"
+                >
+                  Ages 0-3
+                </button>
+              </li>
+              <br>
+              <!-- Create Story -->
+              <li class="nav-item">
+                <button
+                  type="button"
+                  id="ages3to7"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#age3to7Modal"
+                >
+                  Ages 3-7
+                </button>
+              </li>
+              <br>
+              <li class="nav-item">
+                <button
+                  type="button"
+                  id="ages7Up"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#age7UpModal"
+                >
+                  Ages 7 & Up
+                </button>
+              </li>
+            </ul>
+            <br><br>
+          </div>
+        </div>
+        <div class="col-md-8">
+            <img src="./images/banner.jpg">
+        </div>
+      </div>
     </div>
 
+    <!-- modal age 0-3 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="age0to3Modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Stories for ages 0-3</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal age 3-7 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="age3to7Modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Stories for ages 3-7</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal ages 7 & Up -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="age7UpModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Stories for ages 7 & Up</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- add Kid and Story buttons -->
+    <ul class="nav justify-content-center">
+      <!-- Add Kid Modal -->
+      <li class="nav-item">
+        <button
+          type="button"
+          id="addKidBtn"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#addKidModal"
+        >
+          Add a Child
+        </button>
+      </li>
+
+      <!-- Create Story -->
+      <li class="nav-item">
+        <button
+          type="button"
+          id="createStoryBtn"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#createStoryModal"
+        >
+          Create a Story
+        </button>
+      </li>
+      <!-- <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li> -->
+    </ul>
+    <hr />
+    <div class="container">
+      <h2>Children</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
 
     <div class="card-footer text-muted text-center">
-        &copy; StoryTime
+      &copy; StoryTime
     </div>
 
     <!--Add Child Button trigger modal  -->
     <!-- Add Child Modal -->
-    <div class="modal fade" id="addKidModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add a Child</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    <div
+      class="modal fade"
+      id="addKidModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add a Child</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Add kid's information form -->
+            <form>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="kidName">Child's Name *</label>
+                  <input
+                    type="text"
+                    class="kidNameText form-control required"
+                    id="kidName"
+                    placeholder="Childs Name"
+                    required
+                  />
+                  <div class="valid-feedback">Nice Name!</div>
+                  <div class="invalid-feedback">Tell me your name!</div>
                 </div>
-                <div class="modal-body">
-                    <!-- Add kid's information form -->
-                    <form>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label for="kidName">Child's Name *</label>
-                                <input type="text" class="kidNameText form-control required" id="kidName"
-                                    placeholder="Childs Name" required>
-                                <div class="valid-feedback"> Nice Name! </div>
-                                <div class="invalid-feedback"> Tell me your name! </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="guardFriendName">Guardian/Friend's Name *</label>
-                                <input type="text" class="guardianNameText form-control required" id="guardFriendName"
-                                    placeholder="Guardian or Friend's Name" required>
-                                <div class="valid-feedback"> Sweet! </div>
-                                <div class="invalid-feedback"> You must have someone to add! </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label for="guardFriendName2">Guardian/Friend's Name</label>
-                                <input type="text" class="guardianNameText2 form-control" id="guardFriendName2"
-                                    placeholder="Guardian or Friend's Name" required>
-                                <div class="valid-feedback"> Awsome! </div>
-                                <div class="invalid-feedback"> You can pick anyone! </div>
-                            </div>
+                <div class="col-md-6 mb-3">
+                  <label for="guardFriendName">Guardian/Friend's Name *</label>
+                  <input
+                    type="text"
+                    class="guardianNameText form-control required"
+                    id="guardFriendName"
+                    placeholder="Guardian or Friend's Name"
+                    required
+                  />
+                  <div class="valid-feedback">Sweet!</div>
+                  <div class="invalid-feedback">
+                    You must have someone to add!
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="guardFriendName2">Guardian/Friend's Name</label>
+                  <input
+                    type="text"
+                    class="guardianNameText2 form-control"
+                    id="guardFriendName2"
+                    placeholder="Guardian or Friend's Name"
+                    required
+                  />
+                  <div class="valid-feedback">Awsome!</div>
+                  <div class="invalid-feedback">You can pick anyone!</div>
+                </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label for="favSibling">Favorite Sibling</label>
-                                <input type="text" class="favSiblingText form-control" id="favSibling" placeholder="Sibling's Name"
-                                    required>
-                                <div class="valid-feedback"> The other ones arn't bad either! </div>
-                                <div class="invalid-feedback"> Come on just pick a favorite, I wont tell! </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label for="favoriteToy">Favorite Toy</label>
-                                <input type="text" class="form-control" id="favoriteToy" placeholder="Toy's Name"
-                                    required>
-                                <div class="valid-feedback"> I want one of those! </div>
-                                <div class="invalid-feedback"> I know you have plenty to pick from! </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="petName">Pet Name</label>
-                                <input type="text" class="form-control" id="petName" placeholder="Pet's Name" required>
-                                <div class="valid-feedback"> Woof Woof! Meow Meow! </div>
-                                <div class="invalid-feedback"> YOU HAVN'T NAMED YOUR PET?! </div>
-                            </div>
-                        </div>
-                    </form>
+                <div class="col-md-6 mb-3">
+                  <label for="favSibling">Favorite Sibling</label>
+                  <input
+                    type="text"
+                    class="favSiblingText form-control"
+                    id="favSibling"
+                    placeholder="Sibling's Name"
+                    required
+                  />
+                  <div class="valid-feedback">
+                    The other ones arn't bad either!
+                  </div>
+                  <div class="invalid-feedback">
+                    Come on just pick a favorite, I wont tell!
+                  </div>
                 </div>
-                <!-- Modal Buttons Save & Close-->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" id="saveKid" class="btn btn-primary saveKidBtn">Save Kid</button>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="favoriteToy">Favorite Toy</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="favoriteToy"
+                    placeholder="Toy's Name"
+                    required
+                  />
+                  <div class="valid-feedback">I want one of those!</div>
+                  <div class="invalid-feedback">
+                    I know you have plenty to pick from!
+                  </div>
                 </div>
-            </div>
+                <div class="col-md-6 mb-3">
+                  <label for="petName">Pet Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="petName"
+                    placeholder="Pet's Name"
+                    required
+                  />
+                  <div class="valid-feedback">Woof Woof! Meow Meow!</div>
+                  <div class="invalid-feedback">
+                    YOU HAVN'T NAMED YOUR PET?!
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- Modal Buttons Save & Close-->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="saveKid"
+              class="btn btn-primary saveKidBtn"
+            >
+              Save Kid
+            </button>
+          </div>
         </div>
+      </div>
     </div>
     <!--Create Story Button trigger modal  -->
     <!-- Modal -->
-    <div class="modal fade" id="createStoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create A Story</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    <div
+      class="modal fade"
+      id="createStoryModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create A Story</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row justify-content-center">
+                <div class="form-group col-6">
+                  <label for="inputState">Select Child</label>
+                  <select id="inputState" class="selectChildDD form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                    <div class="valid-feedback">
+                      You picked my favorite one! shhh dont tell
+                    </div>
+                    <div class="invalid-feedback">
+                      Who are we making a story for?
+                    </div>
+                  </select>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row justify-content-center">
-                            <div class="form-group col-6">
-                                <label for="inputState">Select Child</label>
-                                <select id="inputState" class="selectChildDD form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                    <div class="valid-feedback"> You picked my favorite one! shhh dont tell </div>
-                                    <div class="invalid-feedback"> Who are we making a story for? </div>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row justify-content-center">
-                            <div class="form-group col-6">
-                                <label for="inputState">Age Range</label>
-                                <select id="inputState" class="ageRangeDD form-control">
-                                    <option selected>Choose...</option>
-                                    <option> 0-3 Years </option>
-                                    <option> 3-7 Years </option>
-                                    <option> 7+ Years </option>
-                                </select>
-                                <div class="valid-feedback"> Wow your growing up fast! </div>
-                                <div class="invalid-feedback"> Let me know how old you are now! </div>
-                            </div>
-                        </div>
-                        <div class="form-row justify-content-center">
-                            <div class="form-group col-6">
-                                <label for="inputState">Story Title</label>
-                                <select id="inputState" class="storyTitleDD form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                </select>
-                                <div class="valid-feedback"> That is a great story! </div>
-                                <div class="invalid-feedback"> Pick a story, any story! </div>
-                            </div>
-                        </div>
-                        <div class="form-row justify-content-center">
-                            <div class="form-group col-4">
-                                <button type="submit" id="storyCreateBtn" class="btn btn-primary">Create Your
-                                    Story</button>
-                            </div>
-                        </div>
-                    </form>
+              </div>
+              <div class="form-row justify-content-center">
+                <div class="form-group col-6">
+                  <label for="inputState">Age Range</label>
+                  <select id="inputState" class="ageRangeDD form-control">
+                    <option selected>Choose...</option>
+                    <option> 0-3 Years </option>
+                    <option> 3-7 Years </option>
+                    <option> 7+ Years </option>
+                  </select>
+                  <div class="valid-feedback">Wow your growing up fast!</div>
+                  <div class="invalid-feedback">
+                    Let me know how old you are now!
+                  </div>
                 </div>
-            </div>
+              </div>
+              <div class="form-row justify-content-center">
+                <div class="form-group col-6">
+                  <label for="inputState">Story Title</label>
+                  <select id="inputState" class="storyTitleDD form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                  <div class="valid-feedback">That is a great story!</div>
+                  <div class="invalid-feedback">Pick a story, any story!</div>
+                </div>
+              </div>
+              <div class="form-row justify-content-center">
+                <div class="form-group col-4">
+                  <button
+                    type="submit"
+                    id="storyCreateBtn"
+                    class="btn btn-primary"
+                  >
+                    Create Your Story
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
     <!-- Optional JavaScript -->
     <script src="./js/members.js"></script>
-</body>
-
+  </body>
 </html>
