@@ -19,22 +19,21 @@ $("#saveKid").on("click", function (event) {
     $(".guardianNameText").removeClass("is-valid");
     $(".guardianNameText").addClass("is-invalid");
    }
+   // Not Required Validators
    if ($(".guardianNameText2").val()){
     $(".guardianNameText2").addClass("is-valid");
-    $(".guardianNameText2").removeClass("is-invalid");
-   }else{
-    $(".guardianNameText2").removeClass("is-valid");
-    $(".guardianNameText2").addClass("is-invalid");
    }
    if ($(".favSiblingText").val()){
     $(".favSiblingText").addClass("is-valid");
-    $(".favSiblingText").removeClass("is-invalid");
-   }else{
-    $(".favSiblingText").removeClass("is-valid");
-    $(".favSiblingText").addClass("is-invalid");
+   }
+   if ($(".favoriteToyText").val()){
+    $(".favoriteToyText").addClass("is-valid");
+   }
+   if ($(".petNameText").val()){
+    $(".petNameText").addClass("is-valid");
    }
    //If required fields are entered addKidStart else alert
-   if ($(".kidNameText").val() !== null && $(".guardianNameText").val() !== null){
+   if ($(".kidNameText").val() !== "" && $(".guardianNameText").val() !== ""){
     var kidData = {
         name: $("#kidName").val().trim(),
         pet: $("#petName").val().trim(),
@@ -53,7 +52,6 @@ $("#saveKid").on("click", function (event) {
       $("#guardFriendName2").val("");
       $("#favoriteToy").val("");
       addKidDb(kidData);
-
    }else{
        alert("Please fill out all required fields")
    }
