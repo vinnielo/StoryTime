@@ -10,25 +10,55 @@ $(document).ready(function () {
   // When the signup button is clicked, we validate the email and password are not blank
   $("#submitSignUp").on("click", function (event) {
     event.preventDefault();
-    var userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim(),
-      firstName: firstNameInput.val().trim(),
-      lastName: lastNameInput.val().trim(),
-    };
-    console.log(userData);
 
-    // data validation goes here
+    if ($("#userCreateEmail").val()) {
+      $(".userEmailText").addClass("is-valid");
+      $(".userEmailText").removeClass("is-invalid");
+    } else {
+      $(".userEmailText").removeClass("is-valid");
+      $(".userEmailText").addClass("is-invalid");
+    }
+    if ($("#userCreatePassword").val()) {
+      $(".userPasswordText").addClass("is-valid");
+      $(".userPasswordText").removeClass("is-invalid");
+    } else {
+      $(".userPasswordText").removeClass("is-valid");
+      $(".userPasswordText").addClass("is-invalid");
+    }
+    if ($("#userFirstName").val()) {
+      $(".userFirstNameText").addClass("is-valid");
+      $(".userFirstNameText").removeClass("is-invalid");
+    } else {
+      $(".userFirstNameText").removeClass("is-valid");
+      $(".userFirstNameText").addClass("is-invalid");
+    }
+    if ($("#userLastName").val()) {
+      $(".userLastNameText").addClass("is-valid");
+      $(".userLastNameText").removeClass("is-invalid");
+    } else {
+      $(".userLastNameText").removeClass("is-valid");
+      $(".userLastNameText").addClass("is-invalid");
+    }
 
-    // if (!userData.email || !userData.password || !userData.firstName || !userData.lastName) {
-    //   return;
-    // }
-    // If we have an email and password, run the signUpUser function
-    signUpUser(userData);
-    emailInput.val("");
-    passwordInput.val("");
-    firstNameInput.val("");
-    lastNameInput.val("");
+    //If required fields are entered attempt log in
+    if ($(".userEmailText").val() !== "" && $(".userPasswordText").val() !== ""
+      && $(".userFirstNameText").val() !== "" && $(".userLastNameText").val() !== "") {
+      console.log("working!")
+      var userData = {
+        email: emailInput.val().trim(),
+        password: passwordInput.val().trim(),
+        firstName: firstNameInput.val().trim(),
+        lastName: lastNameInput.val().trim(),
+      };
+      emailInput.val("");
+      passwordInput.val("");
+      firstNameInput.val("");
+      lastNameInput.val("");
+      signUpUser(userData);
+    } else {
+      console.log("else working!")
+      alert("Enter all required fields")
+    }
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -48,6 +78,6 @@ $(document).ready(function () {
     $("#alert").fadeIn(500);
   }
 
- 
-  
+
+
 });
