@@ -9,9 +9,9 @@ module.exports = function(app) {
   // splash page route
   app.get("/", function(req, res) {
     
-    // if (req.user) {
-    //   res.redirect("/members");
-    // }
+    if (req.user) {
+      res.redirect("/members");
+    }
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   
