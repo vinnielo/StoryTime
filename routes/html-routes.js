@@ -15,21 +15,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   
-  // once the user logs in send them to the members page
 
-  app.get("/members", function(req, res) {
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/members.html"));
-  });
 
   // once user clicks on the generate story button redirect to story.html
 
-  app.get("/story", function(req, res) {   
-    if (req.user) {
-      res.redirect("/members");
-    }
+  app.get("/story", isAuthenticated, function(req, res) {   
     res.sendFile(path.join(__dirname, "../public/story.html"));
   });
 

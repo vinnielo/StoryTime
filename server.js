@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Static directory
 app.use(express.static("public"));
-// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize())
 app.use(passport.session())
 // Routes
