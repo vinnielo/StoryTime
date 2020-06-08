@@ -27,7 +27,6 @@ module.exports = function(app) {
   });
 
 
-
   // user api get route
   app.get("/api/signup", function(req,res){
     db.User.findAll({}).then(function(dbUser) {
@@ -61,3 +60,5 @@ module.exports = function(app) {
 
   
 };
+
+
