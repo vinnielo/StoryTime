@@ -1,6 +1,7 @@
 var express = require("express");
 var session = require("express-session");
 const passport = require('passport')
+// const nodemailer = require("nodemailer");
 // Sets up the Express App
 // =============================================================
 var app = express();

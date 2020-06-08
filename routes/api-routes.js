@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-
+const sendStory = require("./nodemailer-routes")
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -55,6 +55,11 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post('/send',function(req,res){
+    sendStory(req.body.to)
+    res.response("Way to not screw it up")
+});
 
 
 
