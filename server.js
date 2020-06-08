@@ -16,8 +16,14 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 // app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+bodyParser = require("body-parser");
+
+app.use(express.static("public"));
+app.use(session({ secret: "cats" }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize())
 app.use(passport.session())
+
 // Routes
 // =============================================================
 require("./routes/kid-api-routes.js")(app);
