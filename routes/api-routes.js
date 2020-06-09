@@ -57,7 +57,7 @@ module.exports = function(app) {
 
   
   app.get("/api/kid", function(req,res) {
-    console.log("this is working", res)
+    // console.log("this is working", res)
     db.Kid.findAll({}).then(function(dbKid) {
       res.json(dbKid);
     });
@@ -94,9 +94,14 @@ module.exports = function(app) {
   });
 
   app.post('/send',function(req,res){
+    console.log("hello!")
     sendStory(req.body.to, req.body.body)
     res.json(true)
   });
+
+  app.post("/sendTest", function(req, res){
+    console.log("this route works")
+  })
 
 
       // DELETE route for deleting kids

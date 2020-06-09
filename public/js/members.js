@@ -65,7 +65,7 @@ $(document).ready(function () {
   });
 
   function addKidDb(data) {
-    console.log(data);
+    // console.log(data);
     $.post("/api/kid", data)
       .then(
         window.location.reload()
@@ -76,7 +76,7 @@ $(document).ready(function () {
   function renderKidList() {
     // console.log("renderkid function invoked");
     $.get("/api/kid", function (data) {
-      console.log("data: ", data);
+      // console.log("data: ", data);
       let kidMarkup = "";
       for (let i = 0; i < data.length; i++) {
         let kidListItem = `<li class="list-group-item"><span>${data[i].name}</span> <button data-id="${data[i].id}" class="btn btn-primary deleteBtn">Delete</button></li>`;
@@ -494,14 +494,17 @@ function handleKidDelete(){
       renderKidList();
     })
   }
+
+
   // Node Mailer on click event
   var to;
   var body;
-  $("#nodemailerBtn").click(function(){     
+  $("#nodemailerBtn").on("click",function(){     
       to=$("#nodemailerEmail").val();
       body=storySession
       console.log(to);
-      $.post("/send",{to:to, body:body},function(data){
+      console.log(body)
+      $.post("http://localhost:8080/send",{to:to, body:body[0]},function(data){
       if(data=="sent")
       {
        $("#nodemailerBtn").empty()
