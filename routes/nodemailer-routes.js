@@ -3,7 +3,7 @@
 const nodemailer = require("nodemailer");
 
 
-function sendStory(to){
+function sendStory(to, body){
 
     // async..await is not allowed in global scope, must use a wrapper
     async function main() {
@@ -26,9 +26,8 @@ function sendStory(to){
     let info = await transporter.sendMail({
         from: '"Nodemailer Contact" <storytime.official.app@gmail.com>', // sender address
         to: to, // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
+        subject: "Your story from StoryTime.", // Subject line
+        html: body, // html body
     });
 
     console.log("Message sent: %s", info.messageId);

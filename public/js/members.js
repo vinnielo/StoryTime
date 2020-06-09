@@ -1,4 +1,3 @@
-var to;
 $(document).ready(function () {
 
   // ----------------------------------------------------------------
@@ -127,7 +126,7 @@ $(document).ready(function () {
 
   // --------------------------------------------------------------------
   // story create function
-
+  var storySession= []
 
   $("#storyCreateBtn1").on("click", function (event) {
     event.stopPropagation();
@@ -179,7 +178,7 @@ $(document).ready(function () {
         $("#story").html(letterStory)
         console.log(letterStory)
         $("#storyContainer").removeAttr("style")
-
+        storySession.push(letterStory)
         // window.location.replace("/story")
       } else if ($(".storyTitleDD").val() === "PottyTime (Ages: 0-3)") {
         let pottyStory = `
@@ -230,7 +229,7 @@ $(document).ready(function () {
       } else if ($(".storyTitleDD").val() === "I love to count (Ages: 0-3)") {
         let iloveToCount = `
         <h2 class="storyName">I Love to Count!</h2><br>
-        <p>${$(".selectChildDD").val()} loves to count every day,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> loves to count every day,
         Counting numbers is how we play,</p>
  
         <p>${$(".guardianDD").val()} loves to count out loud to me,
@@ -243,7 +242,7 @@ $(document).ready(function () {
         7 and 8 and don’t forget 9</p>
  
         <p>After we count to 9 is when,
-        ${$(".selectChildDD").val()} gets to scream, 10!!!!!</p>
+        <span class="nameK">${$(".selectChildDD").val()}</span> gets to scream, 10!!!!!</p>
         `
 
         $("#story").html(iloveToCount);
@@ -253,28 +252,28 @@ $(document).ready(function () {
         let toTheMoonAndBack = `
         <h2 class="storyName">To the Moon & Back!</h2><br>
 
-        <p>${$(".selectChildDD").val()} woke up one day and looked at the moon and sky and stars,
-        ${$(".selectChildDD").val()} loved the way the stars twinkled and the sky went on forever and the moon shone so bright,
-        ${$(".selectChildDD").val()} asked ${$(".guardianDD").val()} “I want to go to space!  Want to come with me?”
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> woke up one day and looked at the moon and sky and stars,
+        <span class="nameK">${$(".selectChildDD").val()}</span> loved the way the stars twinkled and the sky went on forever and the moon shone so bright,
+        <span class="nameK">${$(".selectChildDD").val()}</span> asked ${$(".guardianDD").val()} “I want to go to space!  Want to come with me?”
         ${$(".guardianDD").val()} said “Of course!”
         </p>
  
-        <p>${$(".selectChildDD").val()} found an old cardboard box and with a little imagination turned it into a spaceship,
-        ${$(".selectChildDD").val()} said “${$(".guardianDD").val()}, get in!”
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> found an old cardboard box and with a little imagination turned it into a spaceship,
+        <span class="nameK">${$(".selectChildDD").val()}</span> said “${$(".guardianDD").val()}, get in!”
         ${$(".guardianDD").val()} jumped in and the spaceship rumbled and shook,
         It shot up into the sky till the earth looked as small as a ball</p>
  
-        <p>${$(".selectChildDD").val()} saw the shining stars zoom past the ship,
-        ${$(".selectChildDD").val()} screamed “did you see that ${$(".guardianDD").val()}?”
-        ${$(".selectChildDD").val()} saw the moon get bigger and bigger,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> saw the shining stars zoom past the ship,
+        <span class="nameK">${$(".selectChildDD").val()}</span> screamed “did you see that ${$(".guardianDD").val()}?”
+        <span class="nameK">${$(".selectChildDD").val()}</span> saw the moon get bigger and bigger,
         ${$(".guardianDD").val()} said “its glowing so bright”,</p>
  
-        <p>${$(".selectChildDD").val()} saw a space ship fly past,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> saw a space ship fly past,
         It was heading quickly back to earth
-        ${$(".selectChildDD").val()} said “It’s like a different world up here”
+        <span class="nameK">${$(".selectChildDD").val()}</span> said “It’s like a different world up here”
         ${$(".guardianDD").val()} said “It’s not another world, it’s our universe”</p>
 
-        <p>${$(".selectChildDD").val()} and ${$(".guardianDD").val()} started to miss ANOTHER PET, PARENT or SIBLING,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and ${$(".guardianDD").val()} started to miss ANOTHER PET, PARENT or SIBLING,
         They both said “Maybe we should come back down to earth”
         They zoomed back home at super speed,
         And agreed to come back in their cardboard spaceship another day.</p>
@@ -499,10 +498,12 @@ function handleKidDelete(){
   }
   // Node Mailer on click event
   var to;
+  var body;
   $("#nodemailerBtn").click(function(){     
       to=$("#nodemailerEmail").val();
+      body=storySession
       console.log(to);
-      $.post("http://localhost:8080/send",{to:to},function(data){
+      $.post("http://localhost:8080/send",{to:to, html:body},function(data){
       if(data=="sent")
       {
        $("#nodemailerBtn").empty()
