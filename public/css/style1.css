@@ -139,9 +139,14 @@ span {
   color: red;
 }
 
+.nameG {
+  color:blue;
+}
+
 .storyName {
   font-family: "Wendy One", sans-serif;
   font-size: 40px;
+  margin-bottom: 0;
   color: rgb(98, 204, 28);
 }
 

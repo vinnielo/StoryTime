@@ -206,10 +206,10 @@ $(document).ready(function () {
 
           <h2 class="storyName">I Love You, SOOO Much!</h2><br>
 
-          <p>Mommy loves you,
+          <p><span class="nameG">${$(".guardianDD").val()}</span> loves you,
           It’s true!</p>
  
-          <p>Daddy loves you,
+          <p><span class="nameG">${$(".guardianDD").val()}</span> loves you,
           Through and through,</p>
           
           <p>They keep you safe all day,
@@ -232,13 +232,13 @@ $(document).ready(function () {
         <p> <span class="nameK">${$(".selectChildDD").val()}</span> loves to count every day,
         Counting numbers is how we play,</p>
  
-        <p>${$(".guardianDD").val()} loves to count out loud to me,
+        <p><span class="nameG">${$(".guardianDD").val()}</span> loves to count out loud to me,
         1 and 2 and even 3,</p>
  
         <p>Counting’s like a magic trick,
         From 4 to 5 and on to  6,</p>
  
-        <p>${$(".guardianDD").val()} count all the time,
+        <p><span class="nameG">${$(".guardianDD").val()}</span> count all the time,
         7 and 8 and don’t forget 9</p>
  
         <p>After we count to 9 is when,
@@ -254,26 +254,26 @@ $(document).ready(function () {
 
         <p> <span class="nameK">${$(".selectChildDD").val()}</span> woke up one day and looked at the moon and sky and stars,
         <span class="nameK">${$(".selectChildDD").val()}</span> loved the way the stars twinkled and the sky went on forever and the moon shone so bright,
-        <span class="nameK">${$(".selectChildDD").val()}</span> asked ${$(".guardianDD").val()} “I want to go to space!  Want to come with me?”
-        ${$(".guardianDD").val()} said “Of course!”
+        <span class="nameK">${$(".selectChildDD").val()}</span> asked <span class="nameG">${$(".guardianDD").val()}</span> “I want to go to space!  Want to come with me?”
+        <span class="nameG">${$(".guardianDD").val()}</span> said “Of course!”
         </p>
  
         <p> <span class="nameK">${$(".selectChildDD").val()}</span> found an old cardboard box and with a little imagination turned it into a spaceship,
-        <span class="nameK">${$(".selectChildDD").val()}</span> said “${$(".guardianDD").val()}, get in!”
-        ${$(".guardianDD").val()} jumped in and the spaceship rumbled and shook,
+        <span class="nameK">${$(".selectChildDD").val()}</span> said “<span class="nameG">${$(".guardianDD").val()}</span>, get in!”
+        <span class="nameG">${$(".guardianDD").val()}</span> jumped in and the spaceship rumbled and shook,
         It shot up into the sky till the earth looked as small as a ball</p>
  
         <p> <span class="nameK">${$(".selectChildDD").val()}</span> saw the shining stars zoom past the ship,
-        <span class="nameK">${$(".selectChildDD").val()}</span> screamed “did you see that ${$(".guardianDD").val()}?”
+        <span class="nameK">${$(".selectChildDD").val()}</span> screamed “did you see that <span class="nameG">${$(".guardianDD").val()}</span>?”
         <span class="nameK">${$(".selectChildDD").val()}</span> saw the moon get bigger and bigger,
-        ${$(".guardianDD").val()} said “its glowing so bright”,</p>
+        <span class="nameG">${$(".guardianDD").val()}</span> said “its glowing so bright”,</p>
  
         <p> <span class="nameK">${$(".selectChildDD").val()}</span> saw a space ship fly past,
         It was heading quickly back to earth
         <span class="nameK">${$(".selectChildDD").val()}</span> said “It’s like a different world up here”
         ${$(".guardianDD").val()} said “It’s not another world, it’s our universe”</p>
 
-        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and ${$(".guardianDD").val()} started to miss ANOTHER PET, PARENT or SIBLING,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and <span class="nameG">${$(".guardianDD").val()}</span> started to miss home.
         They both said “Maybe we should come back down to earth”
         They zoomed back home at super speed,
         And agreed to come back in their cardboard spaceship another day.</p>
@@ -286,33 +286,33 @@ $(document).ready(function () {
         let saveTheKingdom = `
         <h2 class="storyName">Save the Kingdom!</h2><br>
 
-        <p>${$(".selectChildDD").val()} was sleeping one day when ${$(".guardianDD").val()} woke them up,
-        “I need your help ${$(".selectChildDD").val()}.  We need to rescue someone from a magical castle,”
-        ${$(".selectChildDD").val()} asked “Is it princess?”
-        ${$(".guardianDD").val()} said “No!  It’s a princess and a knight a shining armor”
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> was sleeping one day when <span class="nameG">${$(".guardianDD").val()}</span> woke them up,
+        “I need your help  <span class="nameK">${$(".selectChildDD").val()}</span>.  We need to rescue someone from a magical castle,”
+        <span class="nameK">${$(".selectChildDD").val()}</span> asked “Is it princess?”
+        <span class="nameG">${$(".guardianDD").val()}</span> said “No!  It’s a princess and a knight a shining armor”
         </p>
  
-        <p>${$(".selectChildDD").val()} and ${$(".guardianDD").val()} ran out the door on their magical castle rescue adventure,
-        ${$(".guardianDD").val()} brought the food and water,
-        ${$(".selectChildDD").val()} brought a blanket and a stick,
-        Together, ${$(".selectChildDD").val()} and ${$(".guardianDD").val()} had everything they needed,</p>
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and <span class="nameG">${$(".guardianDD").val()}</span> ran out the door on their magical castle rescue adventure,
+        <span class="nameG">${$(".guardianDD").val()}</span> brought the food and water,
+        <span class="nameK">${$(".selectChildDD").val()}</span> brought a blanket and a stick,
+        Together,  <span class="nameK">${$(".selectChildDD").val()}</span> and <span class="nameG">${$(".guardianDD").val()}</span> had everything they needed,</p>
  
-        <p>${$(".selectChildDD").val()} and ${$(".guardianDD").val()} saw something running towards them from far away,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and <span class="nameG">${$(".guardianDD").val()}</span> saw something running towards them from far away,
         It was a magic dragon that wanted to protect the magic castle,
-        ${$(".selectChildDD").val()} said “I wont hurt him”
-        ${$(".selectChildDD").val()} threw the blanket over the dragon and then ${$(".guardianDD").val()} and ${$(".selectChildDD").val()} ran away,
+        <span class="nameK">${$(".selectChildDD").val()}</span> said “I wont hurt him”
+        <span class="nameK">${$(".selectChildDD").val()}</span> threw the blanket over the dragon and then <span class="nameG">${$(".guardianDD").val()}</span> and  <span class="nameK">${$(".selectChildDD").val()}</span> ran away,
         </p>
  
-        <p>${$(".selectChildDD").val()} and ${$(".guardianDD").val()} saw the castle at the same time,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and <span class="nameG">${$(".guardianDD").val()}</span> saw the castle at the same time,
         “There it is!” they shouted,
         “There’s the castle with the knight and princess!”
         The slowly snuck up to the castle, careful not to make a noise.
         </p>
 
-        <p>Same ${$(".guardianDD").val()} tried to open the castle door but it was stuck
-        They used ${$(".selectChildDD").val()}'s stick to pry it open and were so surprised by what they found
+        <p>Same <span class="nameG">${$(".guardianDD").val()}</span> tried to open the castle door but it was stuck
+        They used  <span class="nameK">${$(".selectChildDD").val()}</span>'s stick to pry it open and were so surprised by what they found
         They rescued the princess and knight
-        But they also found different ${$(".guardianDD").val()} in there and rescued them  too!!!
+        But they also found different <span class="nameG">${$(".guardianDD").val()}</span> in there and rescued them  too!!!
         </p>
  `
         $("#story").html(saveTheKingdom);
@@ -322,68 +322,68 @@ $(document).ready(function () {
         let youAreSuper = `
         <h2 class="storyName">You are Super!</h2><br>
 
-        <p>One day ${$(".selectChildDD").val()} picked up their basketball,
+        <p>One day  <span class="nameK">${$(".selectChildDD").val()}</span> picked up their basketball,
         But something was different about their ball today,
-        The ball gave ${$(".selectChildDD").val()} a funny feeling,
+        The ball gave  <span class="nameK">${$(".selectChildDD").val()}</span> a funny feeling,
         Like the basketball was giving them super powers!!!!
         </p>
  
-        <p>${$(".selectChildDD").val()} was walking outside when ${$(".guardianDD").val()} said,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> was walking outside when <span class="nameG">${$(".guardianDD").val()}</span> said,
         “Don’t run so fast!”
-        So ${$(".selectChildDD").val()} said,
+        So  <span class="nameK">${$(".selectChildDD").val()}</span> said,
         “Okay, I’ll just fly instead!”
         </p>
  
-        <p>${$(".selectChildDD").val()} jumped UP,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> jumped UP,
         But instead of falling back down,
-        ${$(".selectChildDD").val()} stayed up,
+        <span class="nameK">${$(".selectChildDD").val()}</span> stayed up,
         And held the basketball tight in their hand!
         </p>
  
-        <p>${$(".selectChildDD").val()} flew out the door and soared hi in the air,
-        ${$(".selectChildDD").val()} could see his whole neighborhood,
-        ${$(".selectChildDD").val()} saved a cat stuck in a tree!
-        ${$(".selectChildDD").val()} helped an old lady cross the road!</p>
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> flew out the door and soared hi in the air,
+        <span class="nameK">${$(".selectChildDD").val()}</span> could see his whole neighborhood,
+        <span class="nameK">${$(".selectChildDD").val()}</span> saved a cat stuck in a tree!
+        <span class="nameK">${$(".selectChildDD").val()}</span> helped an old lady cross the road!</p>
 
-        <p>${$(".selectChildDD").val()} saw ${$(".guardianDD").val()}  along with their entire family, all of their pets and all of their friends.
-        ${$(".guardianDD").val()} said “That’s looks so fun!”
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> saw <span class="nameG">${$(".guardianDD").val()}</span>  along with their entire family, all of their pets and all of their friends.
+        <span class="nameG">${$(".guardianDD").val()}</span> said “That’s looks so fun!”
         The dog said “Take me too!”
-        ${$(".selectChildDD").val()} came back down and even though ${$(".selectChildDD").val()} wasn’t flying anymore, ${$(".selectChildDD").val()} was still a superhero!
+        <span class="nameK">${$(".selectChildDD").val()}</span> came back down and even though  <span class="nameK">${$(".selectChildDD").val()}</span> wasn’t flying anymore,  <span class="nameK">${$(".selectChildDD").val()}</span> was still a superhero!
         </p>
  `
         $("#story").html(youAreSuper);
         $("#storyContainer").removeAttr("style");
       } else if ($(".storyTitleDD").val() === "The great pet adventure (Ages 3-7)") {
         let theGreatPetAdventure = `
-        <h2 class="storyName">The Great Pet Adventure!</h2><br>
+        <h2 class="storyName">The Great Pet Adventure!</h2>
 
-        <p>One day ${$(".selectChildDD").val()} and Spot the dog decided to go out on an adventure,
-        ${$(".selectChildDD").val()} and Spot would explore in search of new fun discoveries,
-        ${$(".selectChildDD").val()} ran out the door and Spot followed with their tail wagging,
-        Spot was excited to follow and protect ${$(".selectChildDD").val()}!
+        <p>One day  <span class="nameK">${$(".selectChildDD").val()}</span> and Spot the dog decided to go out on an adventure,
+        <span class="nameK">${$(".selectChildDD").val()}</span> and Spot would explore in search of new fun discoveries,
+        <span class="nameK">${$(".selectChildDD").val()}</span> ran out the door and Spot followed with it tail wagging,
+        Spot was excited to follow and protect  <span class="nameK">${$(".selectChildDD").val()}</span>!
         </p>
  
         <p>They found green grass and rolled around and played,
         They heard birds chirping and Spot tried to chase them,
-        They discovered a BIG tree and ${$(".selectChildDD").val()} tried to climb it,
-        Spot jumped up and ran in circles waiting for ${$(".selectChildDD").val()} to come back down.
+        They discovered a BIG tree and  <span class="nameK">${$(".selectChildDD").val()}</span> tried to climb it,
+        Spot jumped up and ran in circles waiting for  <span class="nameK">${$(".selectChildDD").val()}</span> to come back down.
         </p>
  
-        <p>${$(".selectChildDD").val()} and Spot ran through fields and discovered a stream,
-        ${$(".selectChildDD").val()} asked Spot “Do you think there were pirates or boats or mermaids here?”,
-        Spot grinned widely and let out a loud animal noise to say “Yes!”,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and Spot ran through fields and discovered a stream,
+        <span class="nameK">${$(".selectChildDD").val()}</span> asked Spot “Do you think there were pirates or boats or mermaids here?”,
+        Spot grinned widely and let out a loud “Yes!”,
         After they explored the stream they ran off to discover more.
         </p>
  
-        <p>${$(".selectChildDD").val()} and Spot ran up a mountain,
-        ${$(".selectChildDD").val()} tripped and hurt his hand,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and Spot ran up a mountain,
+        <span class="nameK">${$(".selectChildDD").val()}</span> tripped and hurt his hand,
         Spot licked his hand to make it all better,
         And then they ran back down.
         </p>
 
-        <p>${$(".selectChildDD").val()} and Spot were tired and decided to go home,
-        They walked through the mountain and field and stream,
-        Spot's tail wagging all the way,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and Spot were tired and decided to go home,
+        They walked passed the mountains, the fields and the streams, and 
+        Spot's tail wagged all the way.
         They got home and rested, ready for an adventure the next day.        
         </p>
  `
@@ -393,35 +393,35 @@ $(document).ready(function () {
         let fire = `
         <h2 class="storyName">Fire!</h2><br>
 
-        <p>${$(".selectChildDD").val()} told ${$(".guardianDD").val()} one day that they were adventurous,
-        ${$(".selectChildDD").val()} said they wanted to help people,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> told <span class="nameG">${$(".guardianDD").val()}</span> one day that they were adventurous,
+        <span class="nameK">${$(".selectChildDD").val()}</span> said they wanted to help people,
         To make sure they’re safe,
         To protect them and rescue them when they’re in trouble,
-        ${$(".guardianDD").val()} said “That’s what a fireman does!”
+        <span class="nameG">${$(".guardianDD").val()}</span> said “That’s what a fireman does!”
         </p>
  
-        <p>So ${$(".selectChildDD").val()} asked “How can I be a fireman?”
-        ${$(".guardianDD").val()} said “First be healthy. 
+        <p>So  <span class="nameK">${$(".selectChildDD").val()}</span> asked “How can I be a fireman?”
+        <span class="nameG">${$(".guardianDD").val()}</span> said “First be healthy. 
         Eat all your veggies and brush your teeth and exercise,
         Because when we’re healthy and strong,
         We can help other people better.”
         </p>
  
-        <p>${$(".selectChildDD").val()} said “And then what?”
-        ${$(".guardianDD").val()} said “Then study hard and learn as much as you can.
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> said “And then?”
+        <span class="nameG">${$(".guardianDD").val()}</span> said “Then study hard and learn as much as you can.
         Because when we become as smart as we can,
         We can use what we learn to teach other people to be safe,
         And we can help them with our knowledge if they’re ever in trouble."</p>
  
-        <p>${$(".selectChildDD").val()} said “And then what?”
-        ${$(".guardianDD").val()} said “And then be brave.
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> said “And then?”
+        <span class="nameG">${$(".guardianDD").val()}</span> said “And then be brave.
         Because when we’re brave we can do hard things,
         And we can help people when they’re going through hard things,
         And we teach other people to be brave.”        
         </p>
 
-        <p>${$(".selectChildDD").val()} said “And then I can be a fireman?”
-        And ${$(".guardianDD").val()} Said “YES!  When you’re healthy and smart and brave
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> said “And then I can be a fireman?”
+        And <span class="nameG">${$(".guardianDD").val()}</span> Said “YES!  When you’re healthy and smart and brave
         You can be a fireman!
         In fact, when you’re healthy and strong and brave,
         You can be anything you want to be in this world!”                
@@ -433,39 +433,37 @@ $(document).ready(function () {
         let familyAdventure = `
         <h2 class="storyName">The Great Family Adventure!</h2><br>
 
-        <p>${$(".selectChildDD").val()} woke up one day and said
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> woke up one day and said
         “I want to travel and I want to go on an adventure!”
-        And ${$(".guardianDD").val()}  said “I do too”
+        And <span class="nameG">${$(".guardianDD").val()}</span>  said “I do too”
         The only thing better than an adventure is an adventure with family,
-        So ${$(".selectChildDD").val()} said “Me and XXX and YYY should go on an adventure together!”
+        So  <span class="nameK">${$(".selectChildDD").val()}</span> said “You and I should go on an adventure together!”
         </p>
  
-        <p>${$(".selectChildDD").val()} and XXX and YYY packed up their bags and prepared for an amazing adventure,
-        And they rode their bikes to the beach,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and <span class="nameG">${$(".guardianDD").val()}</span> packed up their bags and prepared for an amazing adventure,
+        And they rode their bikes to the beach.
         The sand was soft the waves were big and the sun was bright,
-        ${$(".selectChildDD").val()} played in the sand,
-        XXX played in the ocean,
-        YYY laid out in the sun.
+        <span class="nameK">${$(".selectChildDD").val()}</span> played in the sand,
+        <span class="nameG">${$(".guardianDD").val()}</span> swam in the ocean.
         </p>
  
-        <p>They all dug for treasures,
+        <p>We  dug for treasures,
         And built castles made of sand,
-        They chased the waves,
+        We chased the waves,
         And swam in the water,
         And played tag all over the beach.
-        "</p>
+        </p>
  
-        <p>${$(".selectChildDD").val()} got their clothes wet,
-        And XXX shared their towel,
-        YYY couldn’t swim great,
-        So XXX helped YYY play in the water,
-        They all played together till it started to get cold.                
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> got their clothes wet,
+        And <span class="nameG">${$(".guardianDD").val()}</span> shared their towel,
+        So <span class="nameG">${$(".guardianDD").val()}</span> helped <span class="nameK">${$(".selectChildDD").val()}</span> play in the water,
+        They played together till it started to get cold.                
         </p>
 
-        <p>${$(".selectChildDD").val()} and XXX and YYY decided to go home,
+        <p> <span class="nameK">${$(".selectChildDD").val()}</span> and <span class="nameG">${$(".guardianDD").val()}</span> decided to go home,
         They were all tired from a fun filled day,
         They couldn’t wait to go home to sleep,
-        ${$(".selectChildDD").val()} said “Nothing is better than an adventure,
+        <span class="nameK">${$(".selectChildDD").val()}</span> said “Nothing is better than an adventure,
         Except an adventure together!!!”                        
         </p>
  `
