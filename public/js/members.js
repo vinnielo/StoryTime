@@ -42,7 +42,7 @@ $(document).ready(function () {
         guardian1: $("#guardFriendName2").val().trim(),
         toy: $("#favoriteToy").val().trim(),
       };
-      console.log(kidData);
+      // console.log(kidData);
 
 
       $("#kidName").val("");
@@ -74,42 +74,42 @@ $(document).ready(function () {
   }
 
   function renderKidList() {
-    console.log("renderkid function invoked");
+    // console.log("renderkid function invoked");
     $.get("/api/kid", function (data) {
       console.log("data: ", data);
       let kidMarkup = "";
       for (let i = 0; i < data.length; i++) {
         let kidListItem = `<li class="list-group-item"><span>${data[i].name}</span> <button data-id="${data[i].id}" class="btn btn-primary deleteBtn">Delete</button></li>`;
         kidMarkup = kidMarkup + kidListItem
-        console.log("kid created", kidMarkup)
+        // console.log("kid created", kidMarkup)
       }
       $(".kidsList").html(kidMarkup);
     });
   };
 
   function renderKidOptions() {
-    console.log("renderkidoptions function invoked");
+    // console.log("renderkidoptions function invoked");
     $.get("/api/kid", function (data) {
       console.log("data: ", data);
       let kidMarkup = "<option selected>Choose ...</option>";
       for (let i = 0; i < data.length; i++) {
         let kidListOption = `<option>${data[i].name}</option>`;
         kidMarkup = kidMarkup + kidListOption
-        console.log("kid created", kidMarkup)
+        // console.log("kid created", kidMarkup)
       }
       $(".selectChildDD").html(kidMarkup);
     });
   };
 
   function renderGuardianOptions() {
-    console.log("renderGuardianOptions function invoked");
+    // console.log("renderGuardianOptions function invoked");
     $.get("/api/kid", function (data) {
-      console.log("data: ", data);
+      // console.log("data: ", data);
       let guardianMarkup = "<option selected>Choose ...</option>";
       for (let i = 0; i < data.length; i++) {
         let guardianListOption = `<option>${data[i].guardian}</option>`;
         guardianMarkup = guardianMarkup + guardianListOption
-        console.log("guardian created", guardianMarkup)
+        // console.log("guardian created", guardianMarkup)
       }
       $(".guardianDD").html(guardianMarkup);
     });
@@ -176,7 +176,7 @@ $(document).ready(function () {
         All the letters are beautiful to me!!!</p>
         `
         $("#story").html(letterStory)
-        console.log(letterStory)
+        // console.log(letterStory)
         $("#storyContainer").removeAttr("style")
         storySession.push(letterStory)
         // window.location.replace("/story")
@@ -501,7 +501,7 @@ function handleKidDelete(){
       to=$("#nodemailerEmail").val();
       body=storySession
       console.log(to);
-      $.post("http://localhost:8080/send",{to:to, html:body},function(data){
+      $.post("/send",{to:to, body:body},function(data){
       if(data=="sent")
       {
        $("#nodemailerBtn").empty()
