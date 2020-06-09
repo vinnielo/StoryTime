@@ -96,9 +96,24 @@ module.exports = function(app) {
   app.post('/send',function(req,res){
     sendStory(req.body.to)
     res.response("Way to not screw it up")
-});
+  });
+
+
+      // DELETE route for deleting kids
+  app.delete("/api/kid/:id", function(req, res) {
+    console.log(req.params.id);
+    db.Kid.destroy({
+       where: {
+         id: req.params.id
+       }
+     }).then(function(dbKid) {
+       res.json(dbKid);
+     });
+   });
+
 
 
 
   
 };
+
