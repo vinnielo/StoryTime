@@ -3,8 +3,8 @@ $(document).ready(function() {
     // ----------------------------------------------------------------
     // kid add to DB function with validators
 
-$("#saveKid").on("click", async function (event) {
-    event.preventDefault();
+$("#saveKid").on("click", function (event) {
+  event.stopPropagation();
    if ($(".kidNameText").val()){
     $(".kidNameText").addClass("is-valid");
     $(".kidNameText").removeClass("is-invalid");
@@ -51,23 +51,22 @@ $("#saveKid").on("click", async function (event) {
       $("#guardFriendName").val("");
       $("#guardFriendName2").val("");
       $("#favoriteToy").val("");
-      await addKidDb(kidData);
-    }else{
+       addKidDb(kidData);
+          }else{
         alert("Please fill out all required fields")
     }
-   
-});
 
-$(".refreshBtn").on("click", function(){
-    renderKidList();
-    
-})
+});
+//Renders kids to the dropdown inside the modal & refreshes the kid list 
+$(".refreshBtn").on("click", async function(){
+    await renderKidList();
+    renderKidOptions();
+});
 
 function addKidDb(data) {
     console.log(data);
     $.post("/api/kid", data)
       .then(
-          
         window.location.reload()
        )
       .catch(handleLoginErr);
@@ -115,6 +114,7 @@ function addKidDb(data) {
 
 
 $("#storyCreateBtn1").on("click", function (event) {
+    event.stopPropagation();
     event.preventDefault();
    if ($(".selectChildDD" ).val() !== "Choose..."){
     $(".selectChildDD").addClass("is-valid");
@@ -139,22 +139,38 @@ $("#storyCreateBtn1").on("click", function (event) {
    }
    if ($(".selectChildDD").val() !== "Choose..." && $(".ageRangeDD").val() !== "Choose..." && $(".storyTitleDD").val() !== "Choose..."){
     //   This will trigger the generate story functionality
-      
+      // console.log($(".selectChildDD").val())
+      if($(".storyTitleDD").val()=== "My favorite letter (Ages: 0-3)"){
+        let letterStory = `<h2>Letter story 0-3</h2>
+       <p>${$(".selectChildDD").val()} wants to choose their favorite letter,
+        But can’t decide which is better,
+         
+        Is it A B C or D?
+        Which letter is best for me?
+         
+        Is E F G H I or maybe J,
+        Which letter would ${$(".selectChildDD").val()}  like to say?
+         
+        K L M N O or P?
+        What’s your favorite letter you see?
+         
+        Q R S T or U?
+        I can’t choose a letter,  ${$(".selectChildDD").val()}  can you?
+         
+        V X Y or Z?
+        All the letters are beautiful to me!!!<p>
+        `
+        $("#story").html(letterStory)
+        console.log(letterStory)
+        $("#storyContainer").removeAttr("style")
+   
+        // window.location.replace("/story")
+      }
 
    }else{
        alert("Please fill out all required fields")
    }
 });
-
-$("#createStoryModal").on("click", function (event) {
-    event.preventDefault();
-    //if ($("#inputState option").length === 1) {
-        renderKidOptions();
-        
-    //}
-    console.log("ha")
-});
-
 
     
 })
