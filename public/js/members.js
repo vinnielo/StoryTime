@@ -165,6 +165,66 @@ $("#storyCreateBtn1").on("click", function (event) {
         $("#storyContainer").removeAttr("style")
    
         // window.location.replace("/story")
+      } else if($(".storyTitleDD").val()=== "PottyTime (Ages: 0-3)"){
+        let pottyStory = `
+        <h2 class="storyName">PottyTime!</h2><br>
+        <p>Sometimes I peepee or poopoo,
+        <span class="nameK">${$(".selectChildDD").val()}</span>, is that something that you do?</p>
+         
+        <p>Of course! We all pee or poo a bit!
+        So the potty is where we go sit!</p>
+         
+        <p>Mommy pees, Daddy pees, <span class="nameK">${$(".selectChildDD").val()}</span> pees too!
+        And sometimes we also go poo!</p>
+         
+        <p>We all sit on the potty when we have to go,
+        The best place to pee and poo that I know!</p>
+         
+        <p>So next time you pee or poo, go to the potty and scream out loud!
+        Mommy and daddy will be so proud!</p>
+        `
+        $("#story").html(pottyStory)
+        $("#storyContainer").removeAttr("style")
+
+      } else if($(".storyTitleDD").val() === "I love you, SOOOO much (Ages: 0-3)"){
+          let loveYou = `
+
+          <h2 class="storyName">I Love You, SOOO Much!</h2><br>
+
+          <p>Mommy loves you,
+          It’s true!</p>
+ 
+          <p>Daddy loves you,
+          Through and through,</p>
+          
+          <p>They keep you safe all day,
+          So you can sleep, eat and play away,</p>
+          
+          <p>They love you a bunch,
+          At breakfast, dinner and even lunch,</p>
+          
+          <p>They are so proud
+          when <span class="nameK">${$(".selectChildDD").val()}</span>  plays, laughs and sings out loud.</p>
+
+          `
+
+          $("#story").html(loveYou);
+          $("#storyContainer").removeAttr("style");
+
+      } else if($(".storyTitleDD").val() === "I love to count (Ages: 0-3)"){
+
+      } else if ($(".storyTitleDD").val() === "To the moon and back (Ages: 3-7)"){
+
+      } else if ($(".storyTitleDD").val() === "Save the kingdom (Ages: 3-7)"){
+
+      } else if ($(".storyTitleDD").val() === "You are super! (Ages: 3-7)"){
+
+      } else if ($(".storyTitleDD").val() === "The great pet adventure (Ages 3-7)"){
+
+      } else if ($(".storyTitleDD").val() === "Fire! (Ages: 7 & Up)"){
+
+      } else if ($(".storyTitleDD").val() === "The great family adventure (Ages: 7 & Up)"){
+
       }
 
    }else{
