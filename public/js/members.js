@@ -150,6 +150,7 @@ $("#createStoryModal").on("click", function (event) {
     event.preventDefault();
     //if ($("#inputState option").length === 1) {
         renderKidOptions();
+        
     //}
     console.log("ha")
 });
