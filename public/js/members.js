@@ -477,7 +477,20 @@ $(document).ready(function () {
       alert("Please fill out all required fields")
     }
   });
+  // Node Mailer on click event
+  var to;
+  $("#nodemailerBtn").click(function(){     
+      to=$("#nodemailerEmail").val();
+      console.log(to);
+      $.post("http://localhost:8080/send",{to:to},function(data){
+      if(data=="sent")
+      {
+       $("#nodemailerBtn").empty()
+
+      }
+
+});
+  });
 
 })
-
 
