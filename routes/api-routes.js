@@ -26,7 +26,44 @@ module.exports = function(app) {
       });  
   });
 
+  app.post("/api/kid", function(req, res) {
+    console.log(req.user)
+    db.User.findAll({
+      where:{
+        email: req.user.email
+      }
+    }).then(function(data){
+      console.log(data[0].dataValues)
+      let data2 = {
+        name: req.body.name,
+        pet: req.body.pet,
+        sibling: req.body.sibling,
+        guardian: req.body.guardian,
+        guardian1: req.body.guardian1,
+        toy: req.body.toy,
+        UserId: data[0].dataValues.id
+      }
+      db.Kid.create(data2)
+      .then(function() {
+        console.log(data2)
+        // res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        console.log(err)
+        res.status(401).json(err);
+      });  
+    })
+  });
 
+  
+  app.get("/api/kid", function(req,res) {
+    console.log("this is working", res)
+    db.Kid.findAll({}).then(function(dbKid) {
+      res.json(dbKid);
+    });
+  });
+
+ 
   // user api get route
   app.get("/api/signup", function(req,res){
     db.User.findAll({}).then(function(dbUser) {

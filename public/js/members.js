@@ -3,7 +3,7 @@ $(document).ready(function() {
     // ----------------------------------------------------------------
     // kid add to DB function with validators
 
-$("#saveKid").on("click", function (event) {
+$("#saveKid").on("click", async function (event) {
     event.preventDefault();
    if ($(".kidNameText").val()){
     $(".kidNameText").addClass("is-valid");
@@ -51,25 +51,70 @@ $("#saveKid").on("click", function (event) {
       $("#guardFriendName").val("");
       $("#guardFriendName2").val("");
       $("#favoriteToy").val("");
-      addKidDb(kidData);
-   }else{
-       alert("Please fill out all required fields")
-   }
+      await addKidDb(kidData);
+    }else{
+        alert("Please fill out all required fields")
+    }
+   
 });
+
+$(".refreshBtn").on("click", function(){
+    renderKidList();
+    
+})
 
 function addKidDb(data) {
     console.log(data);
     $.post("/api/kid", data)
       .then(
+          
         window.location.reload()
        )
       .catch(handleLoginErr);
   }
+
+  function renderKidList(){
+      console.log("renderkid function invoked");
+      $.get("/api/kid", function(data) {
+        console.log("data: ", data);
+        let kidMarkup = "";
+        for (let i = 0; i < data.length; i++) {
+            let kidListItem = `<li><span>${data[i].name}</span> <button>Edit</button></li>`;
+           kidMarkup = kidMarkup + kidListItem
+            console.log("kid created", kidMarkup)
+        }
+        $(".kidsList").html(kidMarkup);
+      });
+  };
+
+  function renderKidOptions(){
+    console.log("renderkidoptions function invoked");
+    $.get("/api/kid", function(data) {
+      console.log("data: ", data);
+      let kidMarkup = "<option selected>Choose ...</option>";
+      for (let i = 0; i < data.length; i++) {
+          let kidListOption = `<option>${data[i].name}</option>`;
+         kidMarkup = kidMarkup + kidListOption
+          console.log("kid created", kidMarkup)
+      }
+      $(".selectChildDD").html(kidMarkup);
+    });
+};
+
+  function handleLoginErr(err) {
+    // $("#alert .msg").text(err.responseJSON);
+    // $("#alert").fadeIn(500);
+    alert("kid already exists")
+  }
+
+
+
+
 // --------------------------------------------------------------------
 // story create function
 
 
-$("#storyCreateBtn").on("click", function (event) {
+$("#storyCreateBtn1").on("click", function (event) {
     event.preventDefault();
    if ($(".selectChildDD" ).val() !== "Choose..."){
     $(".selectChildDD").addClass("is-valid");
@@ -100,5 +145,15 @@ $("#storyCreateBtn").on("click", function (event) {
        alert("Please fill out all required fields")
    }
 });
+
+$("#createStoryModal").on("click", function (event) {
+    event.preventDefault();
+    //if ($("#inputState option").length === 1) {
+        renderKidOptions();
+    //}
+    console.log("ha")
+});
+
+
     
 })
