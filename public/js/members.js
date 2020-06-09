@@ -61,6 +61,7 @@ $(document).ready(function () {
   $(".refreshBtn").on("click", async function () {
     await renderKidList();
     renderKidOptions();
+    renderGuardianOptions();
   });
 
   function addKidDb(data) {
@@ -97,6 +98,20 @@ $(document).ready(function () {
         console.log("kid created", kidMarkup)
       }
       $(".selectChildDD").html(kidMarkup);
+    });
+  };
+
+  function renderGuardianOptions() {
+    console.log("renderGuardianOptions function invoked");
+    $.get("/api/kid", function (data) {
+      console.log("data: ", data);
+      let guardianMarkup = "<option selected>Choose ...</option>";
+      for (let i = 0; i < data.length; i++) {
+        let guardianListOption = `<option>${data[i].guardian}</option>`;
+        guardianMarkup = guardianMarkup + guardianListOption
+        console.log("guardian created", guardianMarkup)
+      }
+      $(".guardianDD").html(guardianMarkup);
     });
   };
 
