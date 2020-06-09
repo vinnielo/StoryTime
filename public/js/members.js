@@ -200,6 +200,7 @@ $(document).ready(function () {
         `
         $("#story").html(pottyStory)
         $("#storyContainer").removeAttr("style")
+        storySession.push(pottyStory)
 
       } else if ($(".storyTitleDD").val() === "I love you, SOOOO much (Ages: 0-3)") {
         let loveYou = `
@@ -225,6 +226,7 @@ $(document).ready(function () {
 
         $("#story").html(loveYou);
         $("#storyContainer").removeAttr("style");
+        storySession.push(loveYou)
 
       } else if ($(".storyTitleDD").val() === "I love to count (Ages: 0-3)") {
         let iloveToCount = `
@@ -247,6 +249,7 @@ $(document).ready(function () {
 
         $("#story").html(iloveToCount);
         $("#storyContainer").removeAttr("style");
+        storySession.push(iloveToCount);
 
       } else if ($(".storyTitleDD").val() === "To the moon and back (Ages: 3-7)") {
         let toTheMoonAndBack = `
@@ -281,6 +284,7 @@ $(document).ready(function () {
 
         $("#story").html(toTheMoonAndBack);
         $("#storyContainer").removeAttr("style");
+        storySession.push(toTheMoonAndBack);
 
       } else if ($(".storyTitleDD").val() === "Save the kingdom (Ages: 3-7)") {
         let saveTheKingdom = `
@@ -317,6 +321,7 @@ $(document).ready(function () {
  `
         $("#story").html(saveTheKingdom);
         $("#storyContainer").removeAttr("style");
+        storySession.push(saveTheKingdom);
 
       } else if ($(".storyTitleDD").val() === "You are super! (Ages: 3-7)") {
         let youAreSuper = `
@@ -353,6 +358,7 @@ $(document).ready(function () {
  `
         $("#story").html(youAreSuper);
         $("#storyContainer").removeAttr("style");
+        storySession.push(youAreSuper);
       } else if ($(".storyTitleDD").val() === "The great pet adventure (Ages 3-7)") {
         let theGreatPetAdventure = `
         <h2 class="storyName">The Great Pet Adventure!</h2>
@@ -389,6 +395,7 @@ $(document).ready(function () {
  `
         $("#story").html(theGreatPetAdventure);
         $("#storyContainer").removeAttr("style");
+        storySession.push(theGreatPetAdventure);
       } else if ($(".storyTitleDD").val() === "Fire! (Ages: 7 & Up)") {
         let fire = `
         <h2 class="storyName">Fire!</h2><br>
@@ -429,6 +436,7 @@ $(document).ready(function () {
  `
         $("#story").html(fire);
         $("#storyContainer").removeAttr("style");
+        storySession.push(fire);
       } else if ($(".storyTitleDD").val() === "The great family adventure (Ages: 7 & Up)") {
         let familyAdventure = `
         <h2 class="storyName">The Great Family Adventure!</h2><br>
@@ -469,6 +477,7 @@ $(document).ready(function () {
  `
         $("#story").html(familyAdventure);
         $("#storyContainer").removeAttr("style");
+        storySession.push(familyAdventure);
       }
 
     } else {
