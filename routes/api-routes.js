@@ -15,25 +15,25 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function({body}, res) {
-    console.log(body)
+    // console.log(body)
     db.User.create(body)
       .then(function() {
         res.redirect(307, "/api/login");
       })
       .catch(function(err) {
-        console.log(err)
+        // console.log(err)
         res.status(401).json(err);
       });  
   });
 
   app.post("/api/kid", function(req, res) {
-    console.log(req.user)
+    // console.log(req.user)
     db.User.findAll({
       where:{
         email: req.user.email
       }
     }).then(function(data){
-      console.log(data[0].dataValues)
+      // console.log(data[0].dataValues)
       let data2 = {
         name: req.body.name,
         pet: req.body.pet,
@@ -45,11 +45,11 @@ module.exports = function(app) {
       }
       db.Kid.create(data2)
       .then(function() {
-        console.log(data2)
+        // console.log(data2)
         // res.redirect(307, "/api/login");
       })
       .catch(function(err) {
-        console.log(err)
+        // console.log(err)
         res.status(401).json(err);
       });  
     })
@@ -94,14 +94,14 @@ module.exports = function(app) {
   });
 
   app.post('/send',function(req,res){
-    sendStory(req.body.to)
-    res.response("Way to not screw it up")
+    sendStory(req.body.to, req.body.body)
+    res.json(true)
   });
 
 
       // DELETE route for deleting kids
   app.delete("/api/kid/:id", function(req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     db.Kid.destroy({
        where: {
          id: req.params.id
