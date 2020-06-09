@@ -1,0 +1,118 @@
+container1{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.mainCastle{
+    width: 100%;
+    border-radius: 5rem;
+}
+
+.kidsTitle{
+    text-align: center;
+}
+
+.addKidBtn,
+#createStoryBtn,
+.refreshBtn
+{
+    margin-right: 10px;
+    border-radius: 15rem;
+    font-size: 30px;
+}
+
+.signUp{
+    margin-left: 347px;
+    border-radius: 15rem;
+    font-size: 30px;
+    margin-top: -41px;
+
+}
+
+h1,
+.kidsTitle, 
+h5{
+    font-family: "Wendy One", sans-serif;
+}
+
+.jumbotron{
+    background-color: yellow;
+    margin-bottom: 0;
+}
+
+.linkNav,
+.mainBtns 
+{
+    background-color: thistle;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Mouse Memoirs';
+    font-size: 30px;
+
+}
+
+.hvrlink:hover{
+    color: red;
+}
+
+h5{
+    padding-top: 106px;
+    padding-left: 27px;
+ text-align: center;
+ color: rgb(5, 8, 197);
+}
+
+.sideColumn{
+    height:600px
+}
+
+#age0to3,
+#ages3to7,
+#ages7Up{
+    margin-left: 57px;
+    border-radius: 15rem;
+    font-size: 30px;
+    font-family: 'Mouse Memoirs';
+}
+
+p{
+    font-family: 'Mouse Memoirs';
+    font-size: 25px;
+}
+
+#saveKid,
+.btn-secondary,
+#storyCreateBtn1
+{
+    border-radius: 15rem;
+    font-family: 'Mouse Memoirs';
+    font-size: 30px;
+}
+
+span{
+    font-family: "Wendy One", sans-serif;
+    font-size: 25px;
+}
+
+.editBtn{
+    border-radius: 15rem;
+    font-family: 'Mouse Memoirs'; 
+    font-size: 25px;
+}
+
+.bookBody{
+    height: 1329px;
+}
+
+.nameK{
+    color:red
+}
+
+.storyName{
+    font-family: "Wendy One", sans-serif;
+    font-size: 40px;
+    color: rgb(98, 204, 28);
+}

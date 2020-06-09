@@ -78,7 +78,7 @@ function addKidDb(data) {
         console.log("data: ", data);
         let kidMarkup = "";
         for (let i = 0; i < data.length; i++) {
-            let kidListItem = `<li><span>${data[i].name}</span> <button>Edit</button></li>`;
+            let kidListItem = `<li class="list-group-item"><span>${data[i].name}</span> <button class="btn btn-primary editBtn">Edit</button></li>`;
            kidMarkup = kidMarkup + kidListItem
             console.log("kid created", kidMarkup)
         }
@@ -141,24 +141,24 @@ $("#storyCreateBtn1").on("click", function (event) {
     //   This will trigger the generate story functionality
       // console.log($(".selectChildDD").val())
       if($(".storyTitleDD").val()=== "My favorite letter (Ages: 0-3)"){
-        let letterStory = `<h2>Letter story 0-3</h2>
-       <p>${$(".selectChildDD").val()} wants to choose their favorite letter,
-        But can’t decide which is better,
+        let letterStory = `<h2 class="storyName">My Favorite Letter</h2><br>
+       <p><span class="nameK">${$(".selectChildDD").val()}</span> wants to choose their favorite letter,
+        But can’t decide which is better,</p>
          
-        Is it A B C or D?
-        Which letter is best for me?
+        <p>Is it A B C or D?
+        Which letter is best for me?</p>
+        
+        <p>Is E F G H I or maybe J,
+        Which letter would <span class="nameK">${$(".selectChildDD").val()}</span>  like to say?</p>
          
-        Is E F G H I or maybe J,
-        Which letter would ${$(".selectChildDD").val()}  like to say?
+        <p>K L M N O or P?
+        What’s your favorite letter you see?</p>
          
-        K L M N O or P?
-        What’s your favorite letter you see?
+        <p>Q R S T or U?
+        I can’t choose a letter,  <span class="nameK">${$(".selectChildDD").val()}</span>  can you?</p>
          
-        Q R S T or U?
-        I can’t choose a letter,  ${$(".selectChildDD").val()}  can you?
-         
-        V X Y or Z?
-        All the letters are beautiful to me!!!<p>
+        <p>V X Y or Z?
+        All the letters are beautiful to me!!!</p>
         `
         $("#story").html(letterStory)
         console.log(letterStory)
