@@ -1,3 +1,4 @@
+var to;
 $(document).ready(function () {
 
   // ----------------------------------------------------------------
@@ -61,7 +62,6 @@ $(document).ready(function () {
   $(".refreshBtn").on("click", async function () {
     await renderKidList();
     renderKidOptions();
-    renderGuardianOptions();
   });
 
   function addKidDb(data) {
@@ -79,7 +79,7 @@ $(document).ready(function () {
       console.log("data: ", data);
       let kidMarkup = "";
       for (let i = 0; i < data.length; i++) {
-        let kidListItem = `<li class="list-group-item"><span>${data[i].name}</span> <button class="btn btn-primary editBtn">Edit</button></li>`;
+        let kidListItem = `<li class="list-group-item"><span>${data[i].name}</span> <button data-id="${data[i].id}" class="btn btn-primary deleteBtn">Delete</button></li>`;
         kidMarkup = kidMarkup + kidListItem
         console.log("kid created", kidMarkup)
       }
@@ -98,20 +98,6 @@ $(document).ready(function () {
         console.log("kid created", kidMarkup)
       }
       $(".selectChildDD").html(kidMarkup);
-    });
-  };
-
-  function renderGuardianOptions() {
-    console.log("renderGuardianOptions function invoked");
-    $.get("/api/kid", function (data) {
-      console.log("data: ", data);
-      let guardianMarkup = "<option selected>Choose ...</option>";
-      for (let i = 0; i < data.length; i++) {
-        let guardianListOption = `<option>${data[i].guardian}</option>`;
-        guardianMarkup = guardianMarkup + guardianListOption
-        console.log("guardian created", guardianMarkup)
-      }
-      $(".guardianDD").html(guardianMarkup);
     });
   };
 
@@ -478,23 +464,43 @@ $(document).ready(function () {
     }
   });
 
+  $("#nodemailerBtn").click(function(){     
+    to=$("#nodemailerEmail").val();
+    console.log(to);
+    $.post("http://localhost:8080/send",{to:to},function(data){
+    if(data=="sent")
+    {
+     $("#nodemailerBtn").empty()
+      
+    }
+
+});
+});
+
+$(document).on("click", ".deleteBtn", handleKidDelete);
+
+function handleKidDelete(){
+   console.log($(this).data("id"));
+    var currentKid = $(this).data("id")
+    deleteKid(currentKid);
+}
+
+//API call to delete Kid
+  function deleteKid(id) {
+  $.ajax({
+    method:"DELETE",
+    url: "/api/kid/" + id
+  })
+    .then(function(){
+      renderKidList();
+    })
+  }
+
 
 })
 
 
 
-$(document).ready(function(){
-  var to;
-  $("#nodemailerBtn").click(function(){     
-      to=$("#nodemailerEmail").val();
-      console.log(to);
-      $.post("http://localhost:8080/send",{to:to},function(data){
-      if(data=="sent")
-      {
-       $("#nodemailerBtn").empty()
 
-      }
+ 
 
-});
-  });
-});
