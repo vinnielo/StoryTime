@@ -99,9 +99,7 @@ module.exports = function(app) {
     res.json(true)
   });
 
-  app.post("/sendTest", function(req, res){
-    console.log("this route works")
-  })
+ 
 
 
       // DELETE route for deleting kids
