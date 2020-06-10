@@ -43,8 +43,8 @@ $(document).ready(function () {
         toy: $("#favoriteToy").val().trim(),
       };
       // console.log(kidData);
-
-
+      
+      
       $("#kidName").val("");
       $("#petName").val("");
       $("#favSibling").val("");
@@ -52,11 +52,11 @@ $(document).ready(function () {
       $("#guardFriendName2").val("");
       $("#favoriteToy").val("");
       addKidDb(kidData);
+      $('#addKidModal').modal('toggle')
       
     } else {
       alert("Please fill out all required fields")
     }
-    refreshLists();
   });
   //Renders kids to the dropdown inside the modal & refreshes the kid list 
   refreshLists = function () {
@@ -64,14 +64,15 @@ $(document).ready(function () {
     renderKidList();
     renderKidOptions();
     renderGuardianOptions();
-    $('#addKidModal').modal('toggle')
   };
+  refreshLists();
 
   function addKidDb(data) {
     // console.log(data);
     $.post("/api/kid", data)
       .then(
-        refreshLists()
+        refreshLists(),
+        window.location.reload()
       )
       .catch(handleLoginErr);
   }
