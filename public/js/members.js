@@ -513,7 +513,7 @@ function handleKidDelete(){
       body=storySession
       console.log(to);
       console.log(body)
-      $.post("http://localhost:8080/send",{to:to, body:body[0]},function(data){
+      $.post("/send",{to:to, body:body[0]},function(data){
       if(data=="sent")
       {
        $("#nodemailerBtn").empty()

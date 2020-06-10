@@ -164,3 +164,96 @@ h1{
     75%  {color: green; left: 200px; top: 0px;}
     100% {color: red; left: 200px; top: 0px;}
   }
+
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .sideColumn{
+      background-image: url(https://img.favpng.com/10/19/0/paper-scroll-parchment-clip-art-png-favpng-iTQ5hFstZ079s0sypPwHwdJ8W.jpg);
+      background-size: 108px 472px !important;
+      background-repeat: no-repeat;
+    }
+
+    h5 {
+      padding-top: 36px;
+      padding-left: 3px;
+      color: rgb(5, 8, 197);
+      font-size: 13px;
+  }
+
+  #age0to3, #ages3to7, #ages7Up {
+    margin-left: 4px;
+    border-radius: 15rem;
+    font-size: 18px;
+    font-family: "Mouse Memoirs";
+}
+ 
+.addKidBtn:hover,
+#createStoryBtn:hover,
+.refreshBtn:hover,
+#age0to3:hover,
+#ages3to7:hover,
+#ages7Up:hover {
+    animation: bounce 1s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+.mainCastle {
+  width: 100%;
+  border-radius: 5rem;
+  height: 90%;
+}
+.jumbotron-fluid{
+  padding-top: 0px;
+}
+
+.storyHead{
+ font-size: 84px !important;
+ padding-top: 35px;
+
+}
+
+
+.storyName {
+    font-family: "Wendy One", sans-serif;
+    font-size: 40px;
+    margin-bottom: 0;
+    /* top: 18%; */
+    color: rgb(98, 204, 28);
+    padding-top: 47px;
+}
+p {
+  font-family: "Mouse Memoirs";
+  font-size: 15px;
+}
+
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+   
+    
+
+
+}
+
