@@ -1,7 +1,12 @@
 # StoryTime
 
 # myproject
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)https://github.com/vinnielo/StoryTime https://fathomless-waters-70908.herokuapp.com/
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+repo: https://github.com/vinnielo/StoryTime 
+
+deployed site: https://fathomless-waters-70908.herokuapp.com/
+
 
 StoryTime
     
