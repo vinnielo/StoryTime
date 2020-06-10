@@ -46,7 +46,7 @@
 }
 .title-text1 {
   position: absolute;
-  top: 60%;
+  top: 75%;
   left: 50%;
   transform: translateX(-50%);
   bottom: 3em;
@@ -54,6 +54,7 @@
   font-size: 4rem;
   text-align: center;
   text-shadow: 0 0 5px black;
+  border-radius: 12rem;
 }
 
 @keyframes fadeAndScale {
@@ -72,6 +73,7 @@
   padding: 30px 62px;
   background-color: blue;
   font-size: 17px;
+  border-radius: 12rem;
   font-family: "Wendy One", sans-serif;
   animation: fadeAndScale 1s cubic-bezier(0, 1.07, 0.72, 1.42);
   transform-origin: center bottom;
@@ -106,12 +108,14 @@ h1 {
 
 }
 
+
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
     .signUp, .logIn {
-      padding: 29px 72px;
+      padding: 24px 80px;
       background-color: blue;
       font-size: 17px;
       font-family: "Wendy One", sans-serif;
