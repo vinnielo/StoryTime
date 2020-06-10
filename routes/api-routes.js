@@ -57,10 +57,16 @@ module.exports = function(app) {
 
   
   app.get("/api/kid", function(req,res) {
-    // console.log("this is working", res)
-    db.Kid.findAll({}).then(function(dbKid) {
-      res.json(dbKid);
-    });
+   
+        db.Kid.findAll({
+          where:{
+            UserId: req.user.id
+          },
+          include:[db.User]
+        }).then(function(dbKid) {
+          res.json(dbKid);
+        });
+     
   });
 
  
@@ -82,14 +88,14 @@ module.exports = function(app) {
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      res.json({});
+      // res.json({});
     } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
+      // res.json({
+      //   email: req.user.email,
+      //   id: req.user.id
+      // });
     }
   });
 
