@@ -52,23 +52,26 @@ $(document).ready(function () {
       $("#guardFriendName2").val("");
       $("#favoriteToy").val("");
       addKidDb(kidData);
+      
     } else {
       alert("Please fill out all required fields")
     }
-
+    refreshLists();
   });
   //Renders kids to the dropdown inside the modal & refreshes the kid list 
-  $(".refreshBtn").on("click", async function () {
-    await renderKidList();
+  refreshLists = function () {
+    console.log("refresh lists being called")
+    renderKidList();
     renderKidOptions();
     renderGuardianOptions();
-  });
+    $('#addKidModal').modal('toggle')
+  };
 
   function addKidDb(data) {
     // console.log(data);
     $.post("/api/kid", data)
       .then(
-        window.location.reload()
+        refreshLists()
       )
       .catch(handleLoginErr);
   }
@@ -483,6 +486,7 @@ $(document).ready(function () {
     } else {
       alert("Please fill out all required fields")
     }
+    $('#createStoryModal').modal('toggle')
   });
 
   $(document).on("click", ".deleteBtn", handleKidDelete);
@@ -514,11 +518,10 @@ function handleKidDelete(){
       console.log(to);
       console.log(body)
       $.post("/send",{to:to, body:body[0]},function(data){
-      if(data=="sent")
-      {
-       $("#nodemailerBtn").empty()
-
+      if(data=="sent"){
+        console.log("email sent")
       }
+      $('#nodemailerModal').modal('toggle')
 
 });
   });
