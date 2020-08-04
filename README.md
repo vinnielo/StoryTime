@@ -15,10 +15,12 @@ The application utilizes MySQL/Sequelize to save user information specific to ea
     
 -[Installation](#Installation)
     
--[Usage](#usage)
-    
 -[License](#license)
-    
+
+-[Contributing](#contributing)
+
+-[Tests](#tests)
+     
 -[Questions](#questions)
     
 ## Installation
