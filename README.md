@@ -48,6 +48,6 @@ no tests
     
 ## Questions
     
-If you have any questions please email me at vinnielo01@gmail.com, ehirsch760@gmail.com, wrgrundler@gmail.com.
+If you have any questions please email us at vinnielo01@gmail.com, ehirsch760@gmail.com, wrgrundler@gmail.com.
 
 To view more of our projects please visit https://github.com/vinnielo, https://github.com/eh4git, https://github.com/wrg93.
